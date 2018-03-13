@@ -1,5 +1,4 @@
 import { Component, OnInit,Inject } from '@angular/core';
-import {CartService} from '../cart.service';
 import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
 import { Router } from '@angular/router';
 @Component({
@@ -9,14 +8,47 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
 cart=[];
-  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService,private cartService:CartService,private router: Router) { }
+items;
+totalPrice=0;
+  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService,private router: Router) { }
 
   ngOnInit() {
-    this.cart=this.cartService.cart;
-    console.log("in cart component")
-    console.log(this.cartService.cart);
+    
     this.cart=this.storage.get('cart');
-    console.log(this.cart);
+    this.items=this.cart.length;
+    for (var i=0; i < this.cart.length; i++) {
+        this.totalPrice=this.totalPrice+this.cart[i].price*this.cart[i].amount;
+      }
+  }
+  itemUpdate(name,amount){
+    for (var i=0; i < this.cart.length; i++) {
+
+      if (this.cart[i].name === name) {
+         this.cart[i].amount=this.cart[i].amount+amount;
+         if(this.cart[i].amount==0){
+           this.cart.splice(i,1);
+           this.items=this.cart.length;
+         }
+         else{
+         this.totalPrice=this.totalPrice+amount*this.cart[i].price;
+         }
+         this.storage.set('cart',this.cart);
+          break;
+      }
+      }
+  
+    
+  }
+  itemRemove(name){
+    for (var i=0; i < this.cart.length; i++) {
+      if (this.cart[i].name === name) {
+           this.cart.splice(i,1);
+           this.items=this.cart.length;
+         this.storage.set('cart',this.cart);
+          break;
+          
+      }
+      }
   }
 
   goToCheckout(){

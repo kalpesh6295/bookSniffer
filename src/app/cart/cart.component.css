@@ -1,0 +1,38 @@
+body{background-color: #f0f0f0;}
+
+.cart-left{ display: inline-block; width: 80%; }
+.cart-right{ display: inline-block; background-color: #ffffff; position: absolute; margin-top: 18px; width: 300px; right: 220px;}
+.cart-title h3{padding-top: 20px; padding-left: 20px;}
+.product-list{ width: 65%; margin-left: 130px;  height: 260px;background-color: #ffffff;}
+.product-section{height: 160px; padding-top: 25px;border-top: 1px solid rgb(211,211,211);background-color: #ffffff;}
+.product-img{height: 170px;}
+.product-img img{height: 100px; width: 100px;  padding-left: 50px; }
+.cart-left ul{list-style-type: none;padding-left: 20px;} 
+.cart-left li{
+	display: inline;
+    margin-left: 10px;
+    
+}
+li input{width: 40px; height: 25px; border: .0003em solid rgb(211,211,211); outline: 1px solid rgb(211,211,211); text-align: center;}
+li button{width: 30px; height: 30px; border-radius: 50%;  font-size: 20px; background-color: #ffffff; border: 1px solid rgb(211,211,211); }  
+li a{color: black; text-decoration: none; margin-left: 30px;}
+.product-section-right{margin-top: -190px; margin-left: 180px;}
+.product-section-right h6{
+	margin-top: -15px;
+}
+footer{background-color: #ffffff; margin-left: 130px; width: 65%; box-shadow: 0 -2px 10px 0 rgba(0, 0, 0, .1); height: 70px;     border-top: 1px solid #f0f0f0;}
+footer button{height: 50px; width: 200px; margin-top: 10px;}
+.product-section-right h3{margin-top: -10px;}
+.product-section-right p{margin-top: -20px;}
+.product-list-2{height: 200px;}
+.cart-title-right{padding: 0px 0px 0px 10px;}
+.cart-right ul{list-style-type: none;}
+.cart-right li{display: inline-block;}
+.product-charges{border-top: 1px solid rgb(211,211,211);}
+.price-heading {margin-left: -30px;}
+.price-number{ margin-left: 200px;}
+.price-number-dilevery{margin-left:150px;}
+.price-heading-amount{border-top: 1px solid rgb(211,211,211);}
+.price-number-pay{ margin-left: 130px;}
+.btn1{margin-left: 350px; margin-right: 10px;  background-color: #ffffff; border:.001em solid black;}
+.btn2{background: #fb641b;border: none;}

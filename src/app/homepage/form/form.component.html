@@ -1,30 +1,187 @@
 
-<form [formGroup] = "fetchBooks" (ngSubmit)="fetchData(fetchBooks.value)">
-  <div>
-    <label>Medium</label>
-    <input type = "text" formControlName="medium">
-  </div>
-  <div>
-    <label>Board</label>
-    <input type = "text" formControlName = "board">
-  </div>
-  <div>
-      <label>Class</label>
-      <input list="class" formControlName = "class">
-      <datalist id="class">
-        <option value="1">
-        <option value="2">
-        <option value="3">
-        <option value="4">
-        <option value="5">
-      </datalist>
-    </div>
-    <div>
-      <label>School</label>
-      <input type = "text" formControlName = "school">
-    </div>
-    <br>
-    <button type = "submit"  >Submit</button>
-</form>
+  <div class="">
+  <div class="page-header">
+    <div class="header-image">
+     <div class="logo-home">
+       <img src="assets/images/logo.png">
+     </div>
+   </div>
+   <div class="typewrite-body">
+   <h1>
+<a href="" class="typewrite" data-period="2000" data-type='[ "this will be the line we want", "this is the line 2 we want", "this is the line 3 we want", "this is we want" ]'>
+  <span class="wrap"></span>
+</a>
+</h1>
 </div>
-<router-outlet></router-outlet>
+<form (ngSubmit)="fetchData(fetchBooks.value)" [formGroup]="fetchBooks">
+<div class="form-body">
+    <div class="medium">
+        <input list="studentMedium"  placeholder="Medium" formControlName="medium">
+        <datalist id="studentMedium" >
+          <option value="English">
+          <option value="Hindi">
+          </datalist>
+      </div>
+      <div class="board">
+          <input list="studentBoard"  placeholder="board" formControlName="board">
+          <datalist id="studentBoard" >
+            <option value="CBSE">
+            <option value="RBSE">
+            <option value="ICSE">
+            </datalist>
+        </div>
+    <div class="class">
+        <input list="studentClass"  placeholder="class" formControlName="class">
+          <datalist id="studentClass" >
+            <option value="class 1" class="check">
+            <option value="class 2" class="check">
+            <option value="class 3">
+            <option value="class 4">
+            <option value="class 5">
+            <option value="class 6">  
+            <option value="class 7">
+            <option value="class 8">
+            <option value="class 9">
+            <option value="class 10">
+            <option value="class 11(SCIENCE)">
+            <option value="class 11(COMM.)">
+            <option value="class 11(ARTS)">
+            <option value="class 12(SCIENCE)">
+            <option value="class 12(COMM.)">
+            <option value="class 12(ARTS)"> 
+          </datalist>
+  </div>
+
+<div class="school">
+  <input type="text" name="" placeholder="School Name" formControlName="school">
+</div>
+
+<div class="submit-btn">
+  <button type="submit">Submit</button>
+</div>
+</div>
+</form>
+<!-- </header> -->
+<div layout-align="center center">
+<div class="about-us">
+<h2>The Book revolution is Here</h2>
+<div class="about-us-content">
+<ul>
+  <li>
+    <div class="section section1">
+      <h3>section section 1</h3>
+       <p> this will be the message we want them to see read learn and now i ma out of words so let it be what it is...</p>
+  </div>
+</li>
+  <li>
+    <div class="section section2">
+      <h3>section section 2</h3>
+       <p> this will be the message we want them to see read learn and now i ma out of words so let it be what it is...</p>
+    </div>
+  </li>
+  <li>
+    <div class="section section3">
+      <h3>section section 3</h3>
+       <p> this will be the message we want them to see read learn and now i ma out of words so let it be what it is...</p>
+    </div>
+  </li>
+  <li>
+    <div class="section section4">
+      <h3>section section 4</h3>
+       <p> this will be the message we want them to see read learn and now i ma out of words so let it be what it is...</p>
+    </div>
+  </li>
+</ul>
+</div>
+</div>
+</div >
+<div layout-align="center center">
+
+<div class="card-text-wrap">
+<div class="row">
+ <h2>The heading of this section will be here..!!</h2>
+   <!-- card-text1 -->
+<div class="example-2 card-text card-text1">
+  <div class="wrapper">
+    <div class="header">
+      <div class="date">
+        <span class="day">12</span>
+        <span class="month">Aug</span>
+        <span class="year">2016</span>
+      </div>
+     <!--  <ul class="menu-content">
+        <li>
+          <a href="#" class="fa fa-bookmark-o"></a>
+        </li>
+        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+      </ul> -->
+    </div>
+    <div class="data">
+      <div class="content">
+       
+        <h1 class="title"><a href="#">Topic of what we want</a></h1>
+        <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.</p>
+        <a href="#" class="button">Read more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- card-text 2 -->
+<div class="example-2 card-text card-text2">
+  <div class="wrapper">
+    <div class="header">
+      <div class="date">
+        <span class="day">12</span>
+        <span class="month">Aug</span>
+        <span class="year">2016</span>
+      </div>
+     <!--  <ul class="menu-content">
+        <li>
+          <a href="#" class="fa fa-bookmark-o"></a>
+        </li>
+        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+      </ul> -->
+    </div>
+    <div class="data">
+      <div class="content">
+       
+        <h1 class="title"><a href="#">Topic of what we want</a></h1>
+        <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.</p>
+        <a href="#" class="button">Read more</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- card-text 3 -->
+<div class="example-2 card-text card-text2">
+  <div class="wrapper">
+    <div class="header">
+      <div class="date">
+        <span class="day">12</span>
+        <span class="month">Aug</span>
+        <span class="year">2016</span>
+      </div>
+     <!--  <ul class="menu-content">
+        <li>
+          <a href="#" class="fa fa-bookmark-o"></a>
+        </li>
+        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+      </ul> -->
+    </div>
+    <div class="data">
+      <div class="content">
+       
+        <h1 class="title"><a href="#">Topic of what we want</a></h1>
+        <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.</p>
+        <a href="#" class="button">Read more</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>

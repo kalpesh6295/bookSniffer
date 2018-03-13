@@ -21,7 +21,7 @@ export class FormComponent implements OnInit {
   });
 
   fetchData(UserData){
-this.router.navigate([UserData.medium,UserData.board,UserData.class]);
+this.router.navigate([UserData.medium.toLowerCase(),UserData.board.toLowerCase(),UserData.class.split(' ')[1]]);
   }
   
   

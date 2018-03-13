@@ -32,7 +32,7 @@ const appRoutes:Routes=[
   {path: '',component: FormComponent},
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},
-  {path: ':medium/:board/:class', component: ProductComponent
+  {path: ':medium/:board/:class', component: ProductComponent}
 ]
 
 

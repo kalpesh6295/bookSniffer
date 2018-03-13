@@ -1,0 +1,202 @@
+body{margin: 0px auto;}
+.header-image {width: 100%; height: 400px; background-image: url("assets/images/book10.jpg");}
+.logo-home{margin: 0px auto; margin-top: 90px; position: absolute; margin-left: 45%; }
+.logo-home img{width: 145px; margin: 0px auto; height: 120px; border-radius: 12px;}
+.typewrite-body{margin-top: -200px; text-align: center;}
+.typewrite{ text-decoration: none; text-align: center;
+    z-index: 1;
+    position: relative;
+    font-weight: 300!important;
+    font-size: 28px;
+    line-height: 1.3em;
+    padding: 0 15px 25px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.3);
+    color: #fff;
+    font-size: 32px;
+    line-height: 36px;
+    font-family: Genath-Regular, serif;
+    font-weight: inherit;
+    }
+.form-body{display: table; margin-top: 40px; margin-left:-11%;}
+.medium{display: table-cell;padding-left: 340px; padding-right: 10px;}
+.medium input{width: 100px;}
+.board{display: table-cell; padding-right: 10px;}
+.board input{width: 100px;}
+.school{display: table-cell;padding-right: 10px;}
+.school input{width: 500px;}
+.class{display: table-cell; padding-right: 10px;}
+.check{width: 2000px !important;}
+input {height:35px !important;  outline: none; border:none; padding-left: 8px;border: 1px solid #333333; }
+button{height: 35px; margin-left: 10px; width: 100px; border-radius: 4px; background-color: #cb202d; border: none; color: #fff; cursor: pointer; } 
+button:hover{color:black;}
+.about-us{margin-top: 100px; margin-left: 20%;}
+.about-us h2{font-size: 32px;
+    margin-left: 20%;
+    line-height: 36px;
+    font-family: Genath-Regular, serif;
+    font-weight: inherit;
+color: #333333;}
+.about-us-content{max-width: 840px; }
+ul{list-style-type: none; }
+.section1{ width: 360px; height: 100px; text-align: left;} 
+.section2{width: 360px; height: 100px; text-align: left;}
+.section3{margin-left: 440px !important;   width: 360px; height: 100px; margin-top: -237px !important; text-align: left;}
+.section4{margin-left: 440px !important;  width: 360px; height: 100px; text-align: left;}
+.section h3{font-size: 17px;
+    line-height: 10px; 
+    text-transform: uppercase;
+    color: #333333;
+    font-family:ProximaNova-SemiBold, Proxima-Nova, sans-serif;
+    font-weight: inherit;}
+ .section p{
+ 	font-family: ProximaNova-Regular, Proxima-Nova, sans-serif;
+ 	    font-size: 14px;
+    line-height: 18px;
+    color: #333333;
+}
+    
+  /* card-texts*/
+
+/*  @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*.card-text-wrap{display: table;}*/
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: #333333;
+}
+
+.row {
+	border-top:1px solid rgb(221, 221, 221);
+    margin: 10px auto 0;
+}
+.row h2{
+	     font-size: 32px;
+    line-height: 36px;
+    font-family: Genath-Regular, serif;
+    font-weight: inherit; 
+    color: #333333;
+    margin-left: 30%;
+    
+}
+.card-text {
+ display: inline-block;
+ width: 30%;
+  margin: 1em; 
+  margin-top: 1em;
+  margin-left: 1.8%;
+  text-align: center;
+
+}
+
+.card-text .wrapper {
+  background-color: #fff;
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+
+height: 300px;
+
+}
+.card-text .wrapper:hover .data {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.card-text .data {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  -webkit-transform: translateY(calc(70px + 1em));
+          transform: translateY(calc(70px + 1em));
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.card-text .data .content {
+  padding: 1em;
+  position: relative;
+  z-index: 1;
+}
+.card-text .author {
+  font-size: 12px;
+}
+.card-text .title {
+  margin-top: 10px;
+}
+.card-text .text {
+  height: 70px;
+  margin: 0;
+}
+
+.example-2 .wrapper {
+  background: url("assets/images/book7.jpg") center/cover no-repeat;
+}
+.example-2 .wrapper:hover .menu-content span {
+  -webkit-transform: translate(-50%, -10px);
+          transform: translate(-50%, -10px);
+  opacity: 1;
+}
+.example-2 .header {
+  color: #fff;
+  padding: 1em;
+}
+.example-2 .header::before, .example-2 .header::after {
+  content: '';
+  display: table;
+}
+.example-2 .header::after {
+  clear: both;
+}
+.example-2 .header .date {
+  float: left;
+  font-size: 12px;
+}
+
+.example-2 .data {
+  color: #fff;
+  -webkit-transform: translateY(calc(70px + 4em));
+          transform: translateY(calc(70px + 4em));
+}
+.example-2 .title a {
+  color: #fff;
+}
+.example-2 .button {
+  display: block;
+  width: 100px;
+  margin: 2em auto 1em;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  line-height: 1;
+  position: relative;
+  font-weight: 700;
+}
+.example-2 .button::after {
+  content: '\2192';
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.example-2 .button:hover::after {
+  -webkit-transform: translate(5px, -50%);
+          transform: translate(5px, -50%);
+  opacity: 1;
+}
+
+

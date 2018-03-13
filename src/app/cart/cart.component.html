@@ -1,10 +1,82 @@
+<div class="cart-left">
+  <div class="cart">
+  
+    <div class="product-list">
+        <div class="cart-title">
+            <h3>MY CART({{items}})</h3>
 <div  *ngFor="let item of cart">
-  <ul>
-    <li>{{item.name}}</li>
-    <li>{{item.amount}}</li>
-    <li>{{item.price}}</li>
-
-  </ul>
+  
+  <div class="product-section">
+      <div class="product-section-left">
+      <div class="product-img">
+        <img src={{item.image}}>
+        <ul>
+          <li><button (click)=itemUpdate(item.name,-1)>-</button></li>
+          <li>{{item.amount}}</li>
+          <li><button (click)=itemUpdate(item.name,+1)>+</button></li>
+            <li><a (click)=itemRemove(item.name)>Remove</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="product-section-right">
+      <div class="product-name">
+      <h3>{{item.name|uppercase}}</h3>
+      </div>
+      <h3>Discription:</h3>
+      <p>{{item.description}} </p>
+        <span class="price">&#8377; {{item.price}}</span>
+    </div>
+  </div>
+  
+  </div>
+  </div>
+  <button class="btn1"> 	&#8592; Continue Shooping</button>
+	<button class="btn2"(click)=goToCheckout()>Checkout</button>
+  
+  
   </div>
 
-  <button (click)=goToCheckout()>place your order</button>
+  <div class="cart-right">
+      <!-- <header> -->
+    
+        <div class="cart-title-right">
+          <h3>Product Details</h3>
+      <!-- </header> -->
+      <div class="product-charges">
+      <div class="Product-price">
+        <ul>
+          <li>
+        <div class="price-heading">
+          Price
+        </div></li>
+        <li>
+        <div class="price-number">
+          &#8377;{{totalPrice}}
+      </div></li>
+    </ul>
+    <div class="Product-price">
+        <ul>
+          <li>
+        <div class="price-heading">
+            shipping charges
+        </div></li>
+        <li>
+        <div class="price-number-dilevery">
+          &#8377;0
+      </div></li>
+    </ul>
+    </div>
+    <div class="Product-price  price-heading-amount">
+        <ul>
+          <li >
+        <div class="price-heading">
+          Amount Payable
+        </div></li>
+        <li>
+        <div class="price-number-pay">
+          &#8377;{{totalPrice}}
+      </div></li>
+    </ul>
+    </div>
+    </div>
+     

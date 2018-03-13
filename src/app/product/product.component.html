@@ -1,9 +1,27 @@
 <div  *ngFor="let subject of subjects">
-  <ul>
+  <!-- <ul>
     <li>{{subject.name}}</li>
     <li>{{subject.description}}</li>
     <li>{{subject.price}}</li>
   </ul>
   <button (click)=addToCart(subject.name,subject.price)>add to cart</button>
-  <button (click)=buyNow(subject.name,subject.price)>buy now</button>
+  <button (click)=buyNow(subject.name,subject.price)>buy now</button> -->
+
+  <figure class="snip1171 orange">
+    <img src={{subject.image}} height=350px width=400px alt="sample52"/>
+    <div class="price">{{subject.price}}</div>
+    <figcaption>
+      <h3>{{subject.name|uppercase}}</h3>
+  
+      <p>
+        {{subject.description|uppercase}}
+      </p><a (click)=addToCart(subject.name,subject.description,subject.image,subject.price)>Add to Cart</a>
+        <div class="buy-now" style="float: left; margin-top: 20px;">
+          <p><button (click)=buyNow(subject.name,subject.description,subject.image,subject.price)>BUY NOW</button></p>
+        </div>
+    </figcaption>
+  </figure>
+  
+  
+
 </div>
