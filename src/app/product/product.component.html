@@ -1,0 +1,9 @@
+<div  *ngFor="let subject of subjects">
+  <ul>
+    <li>{{subject.name}}</li>
+    <li>{{subject.description}}</li>
+    <li>{{subject.price}}</li>
+  </ul>
+  <button (click)=addToCart(subject.name,subject.price)>add to cart</button>
+  <button (click)=buyNow(subject.name,subject.price)>buy now</button>
+</div>

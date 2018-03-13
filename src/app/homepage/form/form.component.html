@@ -1,5 +1,4 @@
-<div>
-  <h2>BookSniffer</h2>
+
 <form [formGroup] = "fetchBooks" (ngSubmit)="fetchData(fetchBooks.value)">
   <div>
     <label>Medium</label>
@@ -25,6 +24,7 @@
       <input type = "text" formControlName = "school">
     </div>
     <br>
-    <button type = "submit" >Submit</button>
+    <button type = "submit"  >Submit</button>
 </form>
 </div>
+<router-outlet></router-outlet>
