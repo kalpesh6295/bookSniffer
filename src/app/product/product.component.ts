@@ -32,7 +32,7 @@ subjectData:Observable<subject[]>;
 var found=0;
 for (var i=0; i < this.cart.length; i++) {
 
-  if (this.cart[i].name === name) {
+  if (this.cart[i].description === description) {
      this.cart[i].amount=this.cart[i].amount+1;
      this.storage.set('cart',this.cart);
      found=1;
@@ -48,6 +48,14 @@ console.log(this.cart);
 
 buyNow(name,description,image,price){
   this.addToCart(name,description,image,price);
+  this.afs.collection('order').doc('abhijeet sawant').set({
+    name:'abhijeet',
+    cart:this.cart
+
+  }).then(()=>{
+    console.log('hip hip hurray')
+  })
+  
   this.router.navigate(['cart'])
 }
 
@@ -60,9 +68,9 @@ buyNow(name,description,image,price){
   this.url = this.router.url;
     this.list= this.url.split('/');
     console.log(this.list)
-this.afs.collection(this.list[1]).doc(this.list[2]).collection(this.list[3]).valueChanges()
+this.afs.collection(this.list[1].toLowerCase()).doc(this.list[2].toLowerCase()).collection(this.list[3].toLowerCase()).valueChanges()
   .subscribe(subject => {
   this.subjects=subject;
-  })
-  }
+  });
+}
 }

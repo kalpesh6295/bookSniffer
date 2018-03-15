@@ -11,10 +11,10 @@
       <div class="product-img">
         <img src={{item.image}}>
         <ul>
-          <li><button (click)=itemUpdate(item.name,-1)>-</button></li>
+          <li><button (click)=itemUpdate(item.description,-1)>-</button></li>
           <li>{{item.amount}}</li>
-          <li><button (click)=itemUpdate(item.name,+1)>+</button></li>
-            <li><a (click)=itemRemove(item.name)>Remove</a></li>
+          <li><button (click)=itemUpdate(item.description,+1)>+</button></li>
+            <li><a (click)=itemRemove(item.description)>Remove</a></li>
         </ul>
       </div>
     </div>

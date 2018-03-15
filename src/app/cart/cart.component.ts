@@ -20,10 +20,10 @@ totalPrice=0;
         this.totalPrice=this.totalPrice+this.cart[i].price*this.cart[i].amount;
       }
   }
-  itemUpdate(name,amount){
+  itemUpdate(description,amount){
     for (var i=0; i < this.cart.length; i++) {
 
-      if (this.cart[i].name === name) {
+      if (this.cart[i].description === description) {
          this.cart[i].amount=this.cart[i].amount+amount;
          if(this.cart[i].amount==0){
            this.cart.splice(i,1);
@@ -39,9 +39,10 @@ totalPrice=0;
   
     
   }
-  itemRemove(name){
+  itemRemove(description){
     for (var i=0; i < this.cart.length; i++) {
-      if (this.cart[i].name === name) {
+      if (this.cart[i].description === description) {
+        this.totalPrice=this.totalPrice-this.cart[i].amount*this.cart[i].price;
            this.cart.splice(i,1);
            this.items=this.cart.length;
          this.storage.set('cart',this.cart);
