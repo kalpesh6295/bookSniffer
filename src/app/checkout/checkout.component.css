@@ -2,49 +2,19 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700");
 @import url("https://fonts.googleapis.com/css?family=Oxygen");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css");
-/*-----------------------------
-# [Color codes]
------------------------------ */
-/*-----------------------------
-# [Size]
------------------------------ */
-/*-----------------------------
-# [Media Visibility Utils]
------------------------------ */
-@media (max-width: 600px) {
-  .hidden-xs {
-    display: none;
-  }
-}
-/*-----------------------------
-# [Typography]
------------------------------ */
-/*-----------------------------
-# [MIXIN]
------------------------------ */
-/* List - Text - Link
--------------------------------------------------------------- */
 body {
   color: #3f465e;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
+ 
 }
-
-
-
-/* RESET BOOTSTRAP -------------------------------------------- */
-.woocommerce .form-row {
+.container .form-row {
   margin-bottom: 10px;
   margin-left: 0;
-  
   margin-right: 0;
 }
-.woocommerce .form-row .required {
-  color: #e41919;
-  border-bottom: none;
-}
-.woocommerce .form-row .button[type="submit"] {
+.container .button[type="submit"] {
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -65,7 +35,7 @@ body {
   color: #fff;
   cursor: pointer;
 }
-.woocommerce .input-text {
+.container .input-text {
   border: 1px solid #e5e5e5;
   background: #fff;
   -webkit-appearance: none;
@@ -75,21 +45,17 @@ body {
   padding: .5rem .75rem;
   font-size: 1rem;
   line-height: 1.25;
-  border-radius: .25rem;
+ 
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
-.woocommerce .input-text:focus {
-  border-color: #00A5B4;
-  outline: 0;
+.container .input-text:focus {
+
+  outline: 1px solid #333333;
 }
-
-/**/
-/**/
-
-.price .woocommerce-Price-amount {
+.price .container-Price-amount {
   font-size: 18px;
 }
-.price .woocommerce-Price-currencySymbol {
+.price .container-Price-currencySymbol {
   color: #596377;
   padding-right: 4px;
   font-size: 12px;
@@ -132,15 +98,11 @@ body {
   width: 10%;
 }
 
-.woocommerce-info {
+.container-info {
   background: #D6E9C6;
   padding: 15px;
   margin-top: 10px;
 }
-
-/*
-/**/
-
 .place-order {
   padding-top: 40px;
 }
@@ -149,30 +111,22 @@ body {
   width: 100%;
   margin-top: -30px;
 }
-
-.woocommerce-checkout-payment label {
-  font-weight: bold;
-}
-.woocommerce-checkout-payment .payment_methods {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.woocommerce-checkout {
-  padding-top: 25px;
-}
-.woocommerce-checkout .col2-set {
+.col2-set {
   display: flex;
+ 
 }
-.woocommerce-checkout .col-1 {
+ .col-1 {
   flex-basis: 49%;
   min-width: 49%;
+  margin-top: 20px;
+  
+  
 }
-.woocommerce-checkout .col-2 {
+ .col-2 {
   flex-basis: 49%;
   min-width: 49%;
-}
+  margin-top: 20px;
+ }
 
 .checkout-info {
   border-top: 3px solid #f8f8f8;
@@ -180,7 +134,6 @@ body {
   margin-top: 50px;
 }
 
-
-.order-total{
-    border-top: 1px solid rgb(211,211,211);
+input.ng-pristine.ng-touched.ng-invalid  {
+  outline: 1px solid red;
 }

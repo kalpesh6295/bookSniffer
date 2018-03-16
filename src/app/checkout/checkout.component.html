@@ -1,3 +1,86 @@
-<p>
-  avinash will do this
-</p>
+<div class="container">
+  <form [formGroup]="checkoutcontent" (ngSubmit)="checkoutSession(checkoutcontent.value)">
+      <div class="col2-set" id="customer_details">
+          <div class="col-1">
+              <div class="woocommerce-billing-fields">
+                  <h3>Billing details</h3>
+                  <div class="woocommerce-billing-fields__field-wrapper">
+                      <p class="form-row form-row-first validate-required woocommerce-invalid woocommerce-invalid-required-field" id="billing_first_name_field" data-priority="10">
+                          <label for="billing_first_name" class="">First name </label>
+                          <input type="text" class="input-text" name="billing_first_name" id="billing_first_name" placeholder="" value="" autocomplete="given-name" autofocus="autofocus" formControlName="fname">
+                      </p>
+                      <p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+                          <label for="billing_last_name" class="">Last name </label>
+                          <input type="text" class="input-text" name="billing_last_name" id="billing_last_name" placeholder="" value="" autocomplete="family-name" formControlName="lname">
+                      </p>
+                      <p class="form-row form-row-wide address-field validate-required" id="billing_address_1_field" data-priority="50">
+                          <label for="billing_address_1" class=""> Street address </label>
+                          <input type="text" class="input-text" name="billing_address_1" id="billing_address_1" placeholder="House number and street name" value="" autocomplete="address-line1" formControlName="address1">
+                      </p>
+                      <p class="form-row form-row-wide address-field" id="billing_address_2_field" data-priority="60">
+                          <input type="text" class="input-text" name="billing_address_2" id="billing_address_2" placeholder="Apartment, suite, unit etc. (optional)" value="" autocomplete="address-line2" formControlName="address2">
+                      </p>
+                      <p class="form-row form-row-wide address-field validate-required" id="billing_city_field" data-priority="70" data-o_class="form-row form-row-wide address-field validate-required">
+                          <label for="billing_city" class="">Town / City </label>
+                          <input type="text" class="input-text" name="billing_city" id="billing_city" placeholder="" value="" autocomplete="address-level2" formControlName="city">
+                      </p>
+                      <p class="form-row form-row-wide address-field validate-postcode validate-required" id="billing_postcode_field" data-priority="90" data-o_class="form-row form-row-wide address-field validate-required validate-postcode">
+                          <label for="billing_postcode" class="">Postcode </label>
+                          <input type="text" class="input-text" name="billing_postcode" id="billing_postcode" placeholder="" value="" autocomplete="postal-code" formControlName="postcode">
+                      </p>
+                      <p class="form-row form-row-first validate-required validate-phone" id="billing_phone_field" data-priority="100">
+                          <label for="billing_phone" class="">Phone </label>
+                          <input type="tel" class="input-text" name="billing_phone" id="billing_phone" placeholder="" value="" autocomplete="tel" formControlName="mobile">
+                      </p>
+                      <div *ngIf="checkoutcontent.get('mobile').touched ">
+                          Number is Invalid.
+                          <p>
+                              <br>
+                          </p>
+                      </div>
+                      <p class="form-row form-row-last validate-required validate-email woocommerce-validated" id="billing_email_field" data-priority="110">
+                          <label for="billing_email" class="">Email address </label>
+                          <input type="email" class="input-text" name="billing_email" id="billing_email" placeholder="" value="" autocomplete="email username" formControlName="email">
+                      </p>
+                      <div *ngIf="checkoutcontent.get('email').touched && !checkoutcontent.get('email').valid">
+                        Email is Invalid.
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-2">
+              <div class="woocommerce-shipping-fields"></div>
+              <h3 id="order_review_heading">Your order</h3>
+              <div id="order_review" class="woocommerce-checkout-review-order">
+                  <table class="shop_table woocommerce-checkout-review-order-table">
+                      <thead>
+                          <tr>
+                              <th class="product-name">Product</th>
+                              <th class="product-total">Total</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr class="cart_item" *ngFor="let cartmember of finalcart">
+                              <td class="product-name"> {{cartmember.description}} <strong class="product-quantity"> ( {{cartmember.amount}} )</strong></td>
+                              <td class="product-total"> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#8377;</span>{{cartmember.price*cartmember.amount}}</span>
+                              </td>
+                          </tr>
+                      </tbody>
+                      <tfoot>
+                          <tr class="order-total">
+                              <th>Total</th>
+                              <td><strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#8377;</span>{{totalprice}}</span></strong></td>
+                          </tr>
+                      </tfoot>
+                  </table>
+                  <div id="payment" class="woocommerce-checkout-payment">
+                      <div class="form-row place-order">
+                          <input type="submit" class="button alt" id="place_order" value="Place order" data-value="Place order" />
+                      </div>
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </form>
