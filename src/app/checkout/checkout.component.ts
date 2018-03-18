@@ -51,7 +51,7 @@ export class CheckoutComponent implements OnInit {
       for(var i =0; i<chars.length;i++){
         console.log("Invalid number for ke andar");
         console.log(chars);
-        if(chars[i] == '[a-z?]'){
+        if(chars[i] == '[a-z?]'){ 
           console.log("Invalid number for wale if ke andar");
           console.log("Invalid Class CheckNumber");
           return {'it_is_a_number':false};

@@ -1,82 +1,65 @@
-<div class="cart-left">
-  <div class="cart">
-  
-    <div class="product-list">
-        <div class="cart-title">
-            <h3>MY CART({{items}})</h3>
-<div  *ngFor="let item of cart">
-  
-  <div class="product-section">
-      <div class="product-section-left">
-      <div class="product-img">
-        <img src={{item.image}}>
-        <ul>
-          <li><button (click)=itemUpdate(item.description,-1)>-</button></li>
-          <li>{{item.amount}}</li>
-          <li><button (click)=itemUpdate(item.description,+1)>+</button></li>
-            <li><a (click)=itemRemove(item.description)>Remove</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="product-section-right">
-      <div class="product-name">
-      <h3>{{item.name|uppercase}}</h3>
-      </div>
-      <h3>Discription:</h3>
-      <p>{{item.description}} </p>
-        <span class="price">&#8377; {{item.price}}</span>
-    </div>
-  </div>
-  
-  </div>
-  </div>
-  <button class="btn1"> 	&#8592; Continue Shooping</button>
-	<button class="btn2"(click)=goToCheckout()>Checkout</button>
-  
-  
-  </div>
-
-  <div class="cart-right">
-      <!-- <header> -->
+<app-header></app-header>
+<main> 
+        <div class="basket">
+                <div class="basket-labels">
+                    <ul>
+                        <li class="item item-heading">Item</li>
+                        <li class="price">Price</li>
+                        <li class="quantity">Quantity</li>
+                        <li class="subtotal">Subtotal</li>
+                    </ul>
+                </div>
+                <div *ngFor="let item of cart">
+                    <div class="basket-product">
+                            <div class="item">
+                                    <div class="product-image">
+                                        <img src={{item.image}} alt="Placholder Image 2" class="product-frame">
+                                    </div>
+                                    <div class="product-details">
+                                        <h1><strong><span class="item-quantity">{{item.description}}</span></strong> </h1>
+                                        <p><strong>{{item.name|uppercase}}</strong></p>
+                                        <p><strong>Seller</strong></p>
+                                    </div>
+                                </div>
+                                <div class="price">{{item.price}}</div>
+                                <div class="quantity">
+                                    <ul class="quantity-list">
+                                        <li>
+                                            <button (click)=itemUpdate(item.description,-1)>-</button>
+                                        </li>
+                                        <li class="value">{{item.amount}}</li>
+                                        <li>
+                                            <button (click)=itemUpdate(item.description,+1)>+</button>
+                                        </li>
+                    
+                                    </ul>
+                                </div>
+                                <div class="subtotal">{{item.amount*item.price}}</div>
+                                <div class="remove">
+                                    <button (click)=itemRemove(item.description)>Remove</button>
+                                </div>
+                    </div>
+                </div>
+            </div>
     
-        <div class="cart-title-right">
-          <h3>Product Details</h3>
-      <!-- </header> -->
-      <div class="product-charges">
-      <div class="Product-price">
-        <ul>
-          <li>
-        <div class="price-heading">
-          Price
-        </div></li>
-        <li>
-        <div class="price-number">
-          &#8377;{{totalPrice}}
-      </div></li>
-    </ul>
-    <div class="Product-price">
-        <ul>
-          <li>
-        <div class="price-heading">
-            shipping charges
-        </div></li>
-        <li>
-        <div class="price-number-dilevery">
-          &#8377;0
-      </div></li>
-    </ul>
-    </div>
-    <div class="Product-price  price-heading-amount">
-        <ul>
-          <li >
-        <div class="price-heading">
-          Amount Payable
-        </div></li>
-        <li>
-        <div class="price-number-pay">
-          &#8377;{{totalPrice}}
-      </div></li>
-    </ul>
-    </div>
-    </div>
-     
+        <!-- <side cart> -->
+        <aside>
+            <div class="summary">
+                <div class="summary-total-items"><span class="total-items"> PRICE DETAILS</span></div>
+                <div class="summary-subtotal">
+                    <div class="subtotal-title">Price({{items}} items)</div>
+                    <div class="subtotal-value final-value" id="basket-subtotal">{{totalPrice}}</div>
+                    <div class="subtotal-title">Delivery Charges</div>
+                    <div class="subtotal-value final-value" id="basket-subtotal">0.00</div>
+                 </div>
+                    <div class="summary-total">
+                        <div class="total-title">Amount Payable</div>
+                        <div class="total-value final-value" id="basket-total">{{totalPrice}}</div>
+                    </div>
+                    <div class="summary-checkout">
+                        <button class="checkout-cta" (click)=goToCheckout()>Checkout</button>
+                    </div>
+                </div>
+        </aside>
+    
+    </main>

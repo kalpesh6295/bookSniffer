@@ -22,6 +22,7 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { SignUpComponent } from './auth/signup/signup.component';
 import { AuthService } from "./auth/auth.service";
 import { ForgetComponent } from "./auth/forget/forget.component";
+import { HeaderComponent } from './header/header.component';
 
 const config = {
   apiKey: "AIzaSyDoV_rdaRnkk-myi6BpKpIbqkW7DGRo7Vs",
@@ -53,7 +54,8 @@ const appRoutes:Routes=[
     CheckoutComponent,
     SigninComponent,
     SignUpComponent,
-    ForgetComponent
+    ForgetComponent,
+    HeaderComponent
   ],
   imports: [
     HttpClientModule,

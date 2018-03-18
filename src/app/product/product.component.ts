@@ -21,6 +21,7 @@ export class ProductComponent implements OnInit {
  subjects:subject[] 
 subjectData:Observable<subject[]>;
 cart=[];
+
 //  subjects:subject[];
   constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService,public afs: AngularFirestore,private router: Router) { }
 
