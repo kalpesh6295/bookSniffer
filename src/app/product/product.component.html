@@ -1,8 +1,6 @@
 <app-header></app-header>
 <div class="book_data">
-  <!-- <div class="container_book"> -->
-<div   *ngFor="let subject of subjects">
-  <figure class="snip1171 orange">
+  <figure  *ngFor="let subject of subjects" class="snip1171 col-xs-12 col-sm-12 col-md-4 col-lg-4 ">
     <img src={{subject.image}} height=350px width=400px alt="sample52"/>
     <div class="price">{{subject.price}}</div>
     <figcaption>
@@ -16,37 +14,4 @@
         </div>
     </figcaption>
   </figure>
-  
-   <!-- <div class="container">
-      <div class="row">
-        
-          <div class="col-sm-3" style="text-align: center;">
-              <article class="col-item">
-                  <div class="photo">
-                      <div class="options-cart-round">
-                          <button class="btn btn-default" title="Add to cart">
-                              <span class="glyphicon glyphicon-shopping-cart"></span>
-                          </button>
-                      </div>
-                      <a href="#"> <img src="https://unsplash.it/500/300?image=0" class="img-responsive" alt="Product Image" /> </a>
-                  </div>
-                  <div class="info">
-                      <div class="row row-footer">
-                          <div class="price-details col-md-6">
-                              <div class="details">
-                                 <h2>Books Name</h2>
-                              </div>
-                               <h1>by author</h1>
-                              
-                             <strong><span class="price-new">Rs.110</span></strong> 
-                          </div>
-                      </div>
-                  </div> 
-              </article>
-          </div>
-          </div>
-      </div> -->
-
 </div>
-</div>
-<!-- </div> -->
