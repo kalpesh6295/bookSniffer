@@ -134,6 +134,6 @@ body {
   margin-top: 50px;
 }
 
-input.ng-pristine.ng-touched.ng-invalid  {
+input.ng-touched.ng-invalid  {
   outline: 1px solid red;
 }

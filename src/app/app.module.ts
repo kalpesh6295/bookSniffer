@@ -18,6 +18,10 @@ import { CartComponent } from './cart/cart.component';
 import { CartService } from './cart.service';
 import { StorageServiceModule} from 'angular-webstorage-service';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignUpComponent } from './auth/signup/signup.component';
+import { AuthService } from "./auth/auth.service";
+import { ForgetComponent } from "./auth/forget/forget.component";
 
 const config = {
   apiKey: "AIzaSyDoV_rdaRnkk-myi6BpKpIbqkW7DGRo7Vs",
@@ -32,7 +36,10 @@ const appRoutes:Routes=[
   {path: '',component: FormComponent},
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},
-  {path: ':medium/:board/:class', component: ProductComponent}
+  {path: ':medium/:board/:class', component: ProductComponent},
+  {path : 'signin', component : SigninComponent},
+  {path : 'signup', component : SignUpComponent},
+  {path : 'reset',component:ForgetComponent}
 ]
 
 
@@ -43,7 +50,10 @@ const appRoutes:Routes=[
     FormComponent,
     ProductComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    SigninComponent,
+    SignUpComponent,
+    ForgetComponent
   ],
   imports: [
     HttpClientModule,
@@ -57,7 +67,7 @@ const appRoutes:Routes=[
     AngularFireAuthModule,
     StorageServiceModule
   ],
-  providers: [CartService],
+  providers: [CartService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

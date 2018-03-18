@@ -1,0 +1,13 @@
+<div>
+  <form [formGroup] = "signupForm" (ngSubmit)="signUp(signupForm.value)">
+    <div>
+      <label for = "email">Email</label>
+      <input type="email" formControlName = "email">
+    </div>
+    <div>
+        <label for = "password">Password</label>
+        <input type="password" formControlName = "password">
+      </div>
+      <button type = "submit">Sign Up</button>
+  </form>
+</div>

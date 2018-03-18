@@ -44,13 +44,30 @@ export class CheckoutComponent implements OnInit {
     
   }
 
+  checknumber(control:FormControl):{ [s:string] : boolean } {
+    if(control.value){
+      var chars = control.value.toString().split('');
+      console.log("Invalid number if ke andar");
+      for(var i =0; i<chars.length;i++){
+        console.log("Invalid number for ke andar");
+        console.log(chars);
+        if(chars[i] == '[a-z?]'){
+          console.log("Invalid number for wale if ke andar");
+          console.log("Invalid Class CheckNumber");
+          return {'it_is_a_number':false};
+        }
+      }
+    }
+    return null;
+  }
 
   checkmobile(control:FormControl):{ [s:string] : boolean } {
     
     // if(control.value){
-    if(control.value&&control.value.toString().length == 10){
+    if(control.value&&control.value.toString().length != 10){
      
-      return {'validnumber':true};
+      //yaha pe invalid hai
+      return {'invalidnumber':true};
     }
     
       return null;
@@ -68,7 +85,7 @@ export class CheckoutComponent implements OnInit {
       address2 : new FormControl(null),
       city : new FormControl(null,Validators.required),
       postcode : new FormControl(null,Validators.required),
-      mobile : new FormControl(null,[Validators.required,this.checkmobile.bind(this)]),
+      mobile : new FormControl(null,[Validators.required,this.checkmobile,this.checknumber]),
       email: new FormControl(null,[Validators.required,Validators.email])
     });
     // console.log("Hey i am in cart");

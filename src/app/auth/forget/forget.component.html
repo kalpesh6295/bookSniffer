@@ -1,0 +1,15 @@
+<div>
+<form [formGroup]="forgetpassForm" (ngSubmit)="forgetpass(forgetpassForm.value)">
+  <div>
+    <label>Enter Your Email</label>
+    <input type = "email" formControlName = "email" #emailvalue>
+  </div>
+  <div>
+    <button type = "submit">Reset Password</button>
+  </div>
+  <div>
+    <p [hidden] = "!authservice.smessage">Check Your Email for Password Resetting mail.</p>
+    <p [hidden] = "!authservice.fmessage">Cannot Send Verification Mail to Your E-Mail Account." </p>
+  </div>
+</form>
+</div>

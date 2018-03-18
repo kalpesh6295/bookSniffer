@@ -20,6 +20,7 @@ export class ProductComponent implements OnInit {
  list;
  subjects:subject[] 
 subjectData:Observable<subject[]>;
+cart=[];
 //  subjects:subject[];
   constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService,public afs: AngularFirestore,private router: Router) { }
 
@@ -27,7 +28,7 @@ subjectData:Observable<subject[]>;
 
   /*-------------++++++++++++++++++++++++++++++=----------------------++++++++++++++++++++++++++++++++++--------------*/
 //  add to cart method 
- cart=[];
+ 
   addToCart(name,description,image,price){
 var found=0;
 for (var i=0; i < this.cart.length; i++) {
