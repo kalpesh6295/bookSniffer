@@ -21,9 +21,18 @@ export class ProductComponent implements OnInit {
  subjects:subject[] 
 subjectData:Observable<subject[]>;
 //  subjects:subject[];
-  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService,public afs: AngularFirestore,private router: Router) { }
+  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService,public afs: AngularFirestore,private router: Router) { 
+    this.router.events.subscribe(()=>{
+    this.url = this.router.url;
+    this.list= this.url.split('/');
+this.afs.collection(this.list[1].toLowerCase()).doc(this.list[2].toLowerCase()).collection(this.list[3].toLowerCase()).valueChanges()
+  .subscribe(subject => {
+  this.subjects=subject;
+  });
+  });
+  }
 
-
+  
 
   /*-------------++++++++++++++++++++++++++++++=----------------------++++++++++++++++++++++++++++++++++--------------*/
 //  add to cart method 
@@ -63,14 +72,7 @@ buyNow(name,description,image,price){
 
 
   ngOnInit() {
-    this.storage.set('cart',[]);
     this.cart=this.storage.get('cart');
-  this.url = this.router.url;
-    this.list= this.url.split('/');
-    console.log(this.list)
-this.afs.collection(this.list[1].toLowerCase()).doc(this.list[2].toLowerCase()).collection(this.list[3].toLowerCase()).valueChanges()
-  .subscribe(subject => {
-  this.subjects=subject;
-  });
+  
 }
 }

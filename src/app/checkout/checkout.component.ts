@@ -68,7 +68,7 @@ export class CheckoutComponent implements OnInit {
       address2 : new FormControl(null),
       city : new FormControl(null,Validators.required),
       postcode : new FormControl(null,Validators.required),
-      mobile : new FormControl(null,[Validators.required,this.checkmobile.bind(this)]),
+      mobile : new FormControl(null,[this.checkmobile]),
       email: new FormControl(null,[Validators.required,Validators.email])
     });
     // console.log("Hey i am in cart");

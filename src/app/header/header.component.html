@@ -1,0 +1,97 @@
+<header class="header-fixed">
+
+    <div class="header-limiter">
+  
+      <h1><a href="#">Book<span>Sniffer</span></a></h1>
+  
+      <nav>
+        <form class="query-form" (ngSubmit)="fetchData(fetchBooks.value)" [formGroup]="fetchBooks">
+         <div class="medium">
+          <input list="studentMedium"  placeholder="Medium" formControlName="medium">
+          <datalist id="studentMedium" >
+            <option value="English">
+            <option value="Hindi">
+            </datalist>
+        </div>
+        <div class="board">
+            <input list="studentBoard"  placeholder="board" formControlName="board">
+            <datalist id="studentBoard" >
+              <option value="CBSE">
+              <option value="RBSE">
+              <option value="ICSE">
+              </datalist>
+          </div>
+      <div class="class">
+          <input list="studentClass"  placeholder="class" formControlName="class">
+            <datalist id="studentClass" >
+              <option value="class 1" class="check"></option>
+              <option value="class 2" class="check"></option>
+              <option value="class 3"></option>
+              <option value="class 4"></option>
+              <option value="class 5"></option>
+              <option value="class 6">  </option>
+              <option value="class 7"></option>
+              <option value="class 8"></option>
+              <option value="class 9"></option>
+              <option value="class 10"></option>
+              <option value="class 11-SCIENCE"></option>
+              <option value="class 11-COMMERCE"></option>
+              <option value="class 11-ARTS"></option>
+              <option value="class 12-SCIENCE"></option>
+              <option value="class 12-COMMERCE"></option>
+              <option value="class 12-ARTS"> </option>
+            </datalist>
+    </div>
+  
+  <div class="school">
+    <input type="text" name="" placeholder="School Name" formControlName="school">
+  </div>
+  <div class="submit-btn">
+    <button type="submit" style="cursor: pointer;">Submit</button>
+  </div>
+  
+  </form>
+        <a href="#" class="Search-btn-mob">Search</a>
+        <a href="#">cart</a>
+        <a href="#">sign up</a>
+        <!-- <a href="#">About</a>
+        <a href="#">Faq</a>
+        <a href="#">Contact</a> -->
+      </nav>
+  
+    </div>
+  
+  </header>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script>
+
+	$(document).ready(function(){
+
+		var showHeaderAt = 150;
+
+		var win = $(window),
+				body = $('body');
+
+		// Show the fixed header only on larger screen devices
+
+		if(win.width() > 400){
+
+			// When we scroll more than 150px down, we set the
+			// "fixed" class on the body element.
+
+			win.on('scroll', function(e){
+
+				if(win.scrollTop() > showHeaderAt) {
+					body.addClass('fixed');
+				}
+				else {
+					body.removeClass('fixed');
+				}
+			});
+
+		}
+
+	});
+
+</script>

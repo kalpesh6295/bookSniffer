@@ -18,6 +18,7 @@ import { CartComponent } from './cart/cart.component';
 import { CartService } from './cart.service';
 import { StorageServiceModule} from 'angular-webstorage-service';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { HeaderComponent } from './header/header.component';
 
 const config = {
   apiKey: "AIzaSyDoV_rdaRnkk-myi6BpKpIbqkW7DGRo7Vs",
@@ -43,7 +44,8 @@ const appRoutes:Routes=[
     FormComponent,
     ProductComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    HeaderComponent
   ],
   imports: [
     HttpClientModule,

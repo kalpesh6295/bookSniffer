@@ -26,8 +26,10 @@ totalPrice=0;
       if (this.cart[i].description === description) {
          this.cart[i].amount=this.cart[i].amount+amount;
          if(this.cart[i].amount==0){
+          this.totalPrice=this.totalPrice-this.cart[i].price;
            this.cart.splice(i,1);
            this.items=this.cart.length;
+           
          }
          else{
          this.totalPrice=this.totalPrice+amount*this.cart[i].price;

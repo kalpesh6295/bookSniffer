@@ -16,14 +16,14 @@
 <form (ngSubmit)="fetchData(fetchBooks.value)" [formGroup]="fetchBooks">
 <div class="form-body">
     <div class="medium">
-        <input list="studentMedium"  placeholder="Medium" formControlName="medium" required>
+        <input list="studentMedium"  placeholder="Medium" formControlName="medium">
         <datalist id="studentMedium" >
           <option value="English">
           <option value="Hindi">
           </datalist>
       </div>
       <div class="board">
-          <input list="studentBoard"  placeholder="board" formControlName="board" required>
+          <input list="studentBoard"  placeholder="board" formControlName="board">
           <datalist id="studentBoard" >
             <option value="CBSE">
             <option value="RBSE">
@@ -31,7 +31,7 @@
             </datalist>
         </div>
     <div class="class">
-        <input list="studentClass"  placeholder="class" formControlName="class" required>
+        <input list="studentClass"  placeholder="class" formControlName="class">
           <datalist id="studentClass" >
             <option value="class 1" class="check">
             <option value="class 2" class="check">
