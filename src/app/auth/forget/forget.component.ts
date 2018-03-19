@@ -32,8 +32,6 @@ export class ForgetComponent implements OnInit {
     // console.log(f.email);
     this.authservice.forgetpassword(f.email);
     this.forgetpassForm.get('email').setValue("");
-    setTimeout(1000,this.success = this.authservice.smessage);
-    setTimeout(1000,this.failure = this.authservice.fmessage);
     
   }
 

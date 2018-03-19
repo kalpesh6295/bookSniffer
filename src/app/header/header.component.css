@@ -142,11 +142,11 @@ body.fixed .header-fixed .header-limiter nav {
     margin-left: -55%;
 }
 .medium{display: inline-block;}
-.medium input{width: 80px;}
+.medium input{width: 120px;}
 .board{
 	display: inline-block;
 }
-.board input{width: 80px;}
+.board input{width: 120px;}
 .class{
 	display: inline-block;
 }
