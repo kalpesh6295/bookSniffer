@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
     school : new FormControl
   });
 
-  constructor(private router:Router,private route:ActivatedRoute) { }
+  constructor(private router:Router) { }
   fetchData(UserData){
     this.router.navigate([UserData.medium.toLowerCase(),UserData.board.toLowerCase(),UserData.class.split(' ')[1].toLowerCase()]);
       }

@@ -1,5 +1,5 @@
-
-.header-fixed {    background: #0d2f55;
+.mobile-header{visibility: hidden;}
+.header-fixed {    background: #006699;
 	box-shadow:0 1px 1px #ccc;
 	padding: 20px 40px;
 	height: 80px;
@@ -36,7 +36,7 @@
 }
 
 .header-fixed .header-limiter h1 span {
-	color: #5383d3;
+	color: #333333;
 }
 
 
@@ -98,16 +98,53 @@ body.fixed .header-fixed .header-limiter nav {
 	font-size: 13px;
 }
 
+.query-form{
+	position: absolute;
+	display: inline-block;
+    margin-left: -55%;
+}
+.medium{display: inline-block;}
+.medium input{width: 120px;}
 
+.board{
+	display: inline-block;
+}
+.board input{width: 120px;}
+.class{
+	display: inline-block;
+}
 
+input{height: 30px; border: 1px solid black; padding:0px 0px 0px 10px;}
+.submit-btn{
+	display: flex;
+	float: right;
+	justify-content: center;
+	vertical-align: middle;
+	margin-top: 5px;
+	margin-left: 5px;
+	
+	
 
-@media all and (max-width: 600px) {
+	
+
+}
+/* .btn-submit{padding-bottom: 200px; border: none; width: 80px;background-color: #eb2026; border-color: #bc0006; color: #fff; font-size: 15px; height: 30px; font-size: 10px;} */
+
+@media all and (max-width: 750px) {
+	.search-icon{
+		margin-right: 20px;
+		
+	}
+	
+	.mobile-header{visibility: visible;z-index: 1; margin: -15px;}
+	.user_cart_container{visibility: hidden; z-index: -500000;}
     .query-form{
     	visibility: hidden;
     }
 	.header-fixed {
 		padding: 20px 0;
 		height: 75px;
+		margin-top: -5px;
 	}
 
 	.header-fixed .header-limiter h1 {
@@ -126,70 +163,40 @@ body.fixed .header-fixed .header-limiter nav {
 	.header-fixed .header-limiter nav a {
 		font-size: 13px;
 	}
-    .Search-btn-mob{
-	visibility: visible;
-}
+
 	body.fixed .header-fixed {
 		display: none;
 	}
 
 }
 
-
-.query-form{
-	position: absolute;
-	display: inline-block;
-    margin-left: -55%;
-}
-.medium{display: inline-block;}
-.medium input{width: 120px;}
-.board{
-	display: inline-block;
-}
-.board input{width: 120px;}
-.class{
-	display: inline-block;
-}
-.school{
-	display: inline-block;
-}
-.school input{
-	width: 360px;
-}
-input{height: 30px; border: 1px solid black; padding:0px 0px 0px 10px;}
-.submit-btn{
-	display: inline-block;
-}
-button{ height: 30px;  border: none; width: 80px;background-color: #eb2026; border-color: #bc0006; color: #fff;}
-@media screen and (min-width: 768px) and (max-width: 1024px){
-.school{
-	visibility: hidden;
-	width: 0px;
-}
-.school input{
-	width: 0px;
-}
-@media screen and (min-width: 768px) and (max-width: 1000px){
+@media screen and (min-width: 760px) and (max-width: 1430px){
 		.query-form{
 	position: absolute;
 	display: inline-block;
-    margin-left: -43%;
+    margin-left: -60%;
 }
 .medium{display: inline-block;}
-.medium input{width: 75px;}
+.medium input{width: 95px;}
 .board{
 	display: inline-block;
 }
-.board input{width: 70px;}
+.board input{width: 95px;}
 .class{
 	display: inline-block;
 }
-.class input{ width: 90px; }
+.class input{ width: 95px; }
 
-.submit-btn{
+/* .submit-btn{
 	display: inline-block;
+	 */
 
 }
 
-}
+
+@media all and (min-width: 2050px){
+	.query-form{
+	
+		margin-left: -27%;
+	}
 }

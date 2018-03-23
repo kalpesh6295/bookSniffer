@@ -18,7 +18,7 @@
                                     <div class="product-details">
                                         <h1><strong><span class="item-quantity">{{item.description}}</span></strong> </h1>
                                         <p><strong>{{item.name|uppercase}}</strong></p>
-                                        <p><strong>Seller</strong></p>
+                                        
                                     </div>
                                 </div>
                                 <div class="price">{{item.price}}</div>
@@ -57,7 +57,7 @@
                         <div class="total-value final-value" id="basket-total">{{totalPrice}}</div>
                     </div>
                     <div class="summary-checkout">
-                        <button class="checkout-cta" (click)=goToCheckout()>Checkout</button>
+                        <button class="checkout-cta"[routerLink]="['/checkout']">Checkout</button>
                     </div>
                 </div>
         </aside>

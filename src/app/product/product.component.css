@@ -1,17 +1,19 @@
+
 .book_data{
   position: absolute;
   margin-top: 60px;
   width: 80vw;
   height: 100vh;
   margin-left: 15vw;
-  /* display: flex; */
+  
   align-items: center;
   justify-content: center;
+  
   
 }
 @media screen and (max-width:988px){
   .book_data{
-    width: 100vw;
+    width: 93vw;
     margin-left: calc(47% - 310px);  
   }
 }
@@ -22,6 +24,7 @@
   }
   .snip1171  {
     width: 100vw;
+    
   }
   
 }
@@ -29,6 +32,7 @@
   .book_data{
     width: 100vw;
     margin: 0;
+    margin-top: 40px;
   }
 }
 app-header{
@@ -39,52 +43,10 @@ app-header{
   align-items: center;
   justify-content: center;
   z-index: 1;
+  margin-top: 0px;
   
 }
-#bar {
-    width: 10%;
-    color: red;
-    display: inline;
-    float: left;
-    margin-top: 35px;
-  }
-  
-  .thing {
-    text-align: left;
-    width: 70px;
-    height: 70px;
-    color: black;
-    border: 5px #666 solid;
-    border-radius: 50%;
-    margin-top: 120px;
-    margin-right: 10px;
-    font-size: 14px;
-    -webkit-transition: all .5s ease-in-out; 
-    background-color: #f1f1f1;
-   text-align: center;
-  }
-  
-  
-  .thing:hover { 
-    -webkit-transform: rotate(-360deg);
-      background-color: #ccc;
-  }
-  
-  p {
-/*    
-    margin-top: 15px; */
-  }
-  
-  a{text-decoration: none;}
-  nav{ position: relative; }
-  .menu{width: 6%;position: absolute; border-right: 1.3px solid rgb(211,211,211); margin-top: -50px; }
-  
-  
-  /*card*/
-  
-  
-  @import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
-  .snip1171 {
+ .snip1171 {
     font-family: 'Raleway', Arial, sans-serif;
     position: relative;
     float: left;
@@ -96,8 +58,9 @@ app-header{
     background: #000000;
     color: #333;
     text-align: left;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     margin-top: 50px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   }
   .snip1171 * {
     -webkit-box-sizing: border-box;
@@ -107,16 +70,11 @@ app-header{
   }
   .snip1171 img {
     max-width: 100%;
-    vertical-align: top;
     z-index: -1;
     height:350px;
      width:400px;
   }
-  .snip1171 figcaption {
-    position: relative;
-    background-color: #ffffff;
-    padding: 20px 25px 50px;
-  }
+ 
   .snip1171 h3 {
     position: absolute;
     bottom: 100%;
@@ -190,60 +148,26 @@ app-header{
     top: 0;
   }
   .snip1171.blue {
-    background-color: #2472a4;
+    background-color:#006699;
   }
   .snip1171.blue h3,
   .snip1171.blue a,
   .snip1171.blue .price {
-    background-color: #2472a4;
+    background-color:#006699;
   }
   .snip1171.blue .price:before {
-    border-color: transparent #2472a4 transparent;
+    border-color: transparent#006699 transparent;
   }
   .snip1171.blue h3:before {
-    border-color: transparent transparent transparent #2472a4;
+    border-color: transparent transparent transparent#006699;
   }
   .snip1171.blue a:before {
-    border-color: transparent transparent #2472a4;
+    border-color: transparent transparent#006699;
   }
-  .snip1171.red {
-    background-color: #ab3326;
+  .snip1171:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   }
-  .snip1171.red h3,
-  .snip1171.red a,
-  .snip1171.red .price {
-    background-color: #ab3326;
-  }
-  .snip1171.red .price:before {
-    border-color: transparent #ab3326 transparent;
-  }
-  .snip1171.red h3:before {
-    border-color: transparent transparent transparent #ab3326;
-  }
-  .snip1171.red a:before {
-    border-color: transparent transparent #ab3326;
-  }
-  .snip1171.orange {
-    background-color: #d67118;
-  }
-  .snip1171.orange button,
-  .snip1171.orange h3,
-  .snip1171.orange a,
-  .snip1171.orange .price {
-    background-color: #d67118;
-  }
-  .snip1171.orange .price:before {
-    border-color: transparent #d67118 transparent;
-  }
-  .snip1171.orange button:before {
-    border-color: transparent transparent transparent #d67118;
-  }
-  .snip1171.orange h3:before {
-    border-color: transparent transparent transparent #d67118;
-  }
-  .snip1171.orange a:before {
-    border-color: transparent transparent #d67118;
-  }
+
   .snip1171:hover img,
   .snip1171.hover img {
     -webkit-transform: scale(1.1);
@@ -255,7 +179,7 @@ app-header{
     position: absolute;
     bottom: 0;
     left: 0px;
-    background-color: #000000;
+    background-color: #006699;
     line-height: 40px;
     padding: 0 10px;
     color: #ffffff;
@@ -263,6 +187,7 @@ app-header{
     font-size: 1.1em;
     text-transform: uppercase;
     border: none;
+    outline: none;
    
   }
   .snip1171 button:before {
@@ -270,8 +195,68 @@ app-header{
     left: 100%;
     border-style: solid;
     border-width: 44px 0 0 12px;
-    border-color: transparent transparent transparent #000000;
+    border-color: transparent transparent transparent #006699;
     content: '';
     top: 0;
     
+  }
+
+  @media screen and (min-width:320px) and (max-width:370px){
+    .snip1171 {
+      min-width: 150px;
+      max-width: 150px;
+      max-height: 240px;
+   
+    }
+    .book_data{
+      width: 100vw;
+      margin-left: calc(45% - 142px);  
+    }
+    .snip1171  {
+      width: 100vw;
+    }
+    .snip1171 img {
+          height:150px;
+      
+    }
+  }
+
+  @media screen and (min-width:370px) and (max-width:420px){
+    .snip1171 {
+      min-width: 180px;
+      max-width: 180px;
+      max-height: 240px;
+   
+    }
+    .book_data{
+      width: 100vw;
+      margin-left: calc(45% - 169px);  
+    }
+    .snip1171  {
+      width: 100vw;
+    }
+    .snip1171 img {
+          height:150px;
+      
+    }
+  }
+
+  @media screen and (min-width:420px) and (max-width:760px){
+    .snip1171 {
+      min-width: 200px;
+      max-width: 200px;
+      max-height: 240px;
+   
+    }
+    .book_data{
+      width: 100vw;
+      margin-left: calc(45% - 189px);  
+    }
+    .snip1171  {
+      width: 100vw;
+    }
+    .snip1171 img {
+          height:150px;
+      
+    }
   }

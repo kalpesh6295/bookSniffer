@@ -1,7 +1,7 @@
-@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
+/* @import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700");
 @import url("https://fonts.googleapis.com/css?family=Oxygen");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"); */
 body {
   color: #3f465e;
   text-rendering: optimizelegibility;
@@ -30,8 +30,8 @@ body {
   line-height: 1.25;
   border-radius: .25rem;
   transition: all .15s ease-in-out;
-  background-color: #00A5B4;
-  border-color: #00A5B4;
+  background-color: #006699;
+  border-color: #006699;
   color: #fff;
   cursor: pointer;
 }
@@ -135,5 +135,27 @@ body {
 }
 
 input.ng-touched.ng-invalid  {
-  outline: 1px solid red;
+  outline: 1px solid #006699;;
 }
+
+@media screen and (max-width: 600px) {
+   .col2-set{
+    display: block;
+  }
+  .col-1 {
+    flex-basis: 49%;
+    min-width: 100%;
+}
+  .col-2 {
+    flex-basis: 49%;
+    min-width: 100%;
+ 
+   margin-top: 20px;
+}
+  }
+
+  @media screen and (min-width:1440) {
+    .container{
+      width: 10vw !important;
+    }
+  }

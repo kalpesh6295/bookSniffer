@@ -32,10 +32,11 @@ p {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: normal;
   margin: 0;
   padding: 0;
+  width: 130%;
 }
 
 input,
@@ -45,14 +46,15 @@ button {
 }
 
 button {
-      background-color: #ff5800;
-    border-color: #ff5800;
+      background-color: #006699;
+    border-color: #006699;
   color: #fff;
 }
 
 button:hover,
 button:focus {
-  background-color: #555;
+  background-color:#006680 ;
+  cursor: pointer;
 }
 
 img,
@@ -216,7 +218,7 @@ li.subtotal:before {
 }
 
 .product-image {
-  width: 35%;
+  width: 25%;
 }
 
 .product-details {
@@ -255,7 +257,7 @@ aside {
   padding: 1rem;
   position: fixed;
   width: 300px;
-  height: 230px;
+  height: 260px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -405,6 +407,7 @@ aside {
   .summary {
     width: 25%;
     margin-left: 20px;
+    height: 300px;
   }
 }
 

@@ -37,9 +37,10 @@ const appRoutes:Routes=[
   {path: '',component: FormComponent},
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},
-  {path: ':medium/:board/:class', component: ProductComponent},
+  
   {path : 'signin', component : SigninComponent},
   {path : 'signup', component : SignUpComponent},
+  {path: ':medium/:board/:class', component: ProductComponent},
   {path : 'reset',component:ForgetComponent}
 ]
 

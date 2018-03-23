@@ -16,18 +16,19 @@
         </div>
     </figcaption>
   </figure> -->
-  <div  *ngFor="let subject of subjects" class="snip1171 col-xs-12 col-sm-12 col-md-4 col-lg-4 orange">
+  <div  *ngFor="let subject of subjects" class="snip1171 col-xs-12 col-sm-12 col-md-4 col-lg-4 blue">
       <img  src={{subject.image}}  alt="sample52"/>
       <div class="price">Rs.{{subject.price}}</div>
       <div style="background-color:white;height:95px;align-items:center;vertical-align:middle;position: relative;">
-      <h3>{{subject.name|uppercase}}</h3>
+      <!-- <h3>{{subject.name|uppercase}}</h3> -->
       
-        <p style="padding-top:20px;">
+        <p style="padding-top:10px;">
           {{subject.description|uppercase}}
         </p>
-        <a style="cursor:pointer" (click)=addToCart(subject.name,subject.description,subject.image,subject.price)>Add to Cart</a>
+      
         <div class="buy-now" style="float: left; margin-top: 20px;">
-          <p><button style="cursor:pointer"  (click)=buyNow(subject.name,subject.description,subject.image,subject.price)>BUY NOW</button></p>
+         
+          <p><button style="cursor:pointer"  (click)=addToCart(subject.name,subject.description,subject.image,subject.price)>Add to Cart</button></p>
         </div>
       </div>
         </div>

@@ -19,7 +19,7 @@ export class ForgetComponent implements OnInit {
 
   @ViewChild("emailvalue") el:HTMLInputElement
 
-  constructor(private authservice:AuthService) { }
+  constructor(public authservice:AuthService) { }
 
   ngOnInit() {
     // this.success = this.authservice.smessage;

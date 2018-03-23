@@ -1,16 +1,30 @@
-<div>
-  <form [formGroup] = "signinForm" (ngSubmit)="signIn(signinForm.value)">
-      <div>
-        <label for = "email">Email</label>
-        <input type="email" formControlName = "email">
-      </div>
-      <div>
-        <label for = "password">Password</label>
-        <input type="password" formControlName = "password">
-      </div>
-      <div>
-        <button type = "submit">Sign In</button>
-        <button type = "button" (click)="forget()">Forget Password?</button>
-      </div>
-  </form>
-</div>
+<app-header></app-header>
+<div class="wrapper">
+  <div class="button">
+    <input type="checkbox" class="button--checkbox" id="menu-toggle">
+    <div class="button__cta">
+      <label for="menu-toggle" class="card__button">
+        <span class="card__button--signup">Sign Up</span>
+     </label>
+    </div>
+    <div class="button__cta">
+        <label for="menu-toggle" class="card__button">
+         <span class="card__button--login">Login</span>
+        </label>
+    </div>
+    
+    <div class="card">
+    
+      <input type="text" placeholder="First Name" id="fname">
+      <input type="text" placeholder="Last Name" id="lname">
+      <input type="email" placeholder="Email" id="email">
+      <input type="password" placeholder="Password" id="password">
+      <button class="btn">
+        <span class="btn__signup">Sign Up</span>
+        <span class="btn__login">Login</span>
+      </button>
+    
+  </div>
+
+  </div>
+  </div>

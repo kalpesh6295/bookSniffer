@@ -2,7 +2,7 @@
 
     <div class="header-limiter">
   
-      <h1><a href="#">Book<span>Sniffer</span></a></h1>
+      <h1><a (click)="router.navigate([''])"style="cursor:pointer;">Book<span>Sniffer</span></a></h1>
   
       <nav>
         <form class="query-form" (ngSubmit)="fetchData(fetchBooks.value)" [formGroup]="fetchBooks">
@@ -42,56 +42,80 @@
               <option value="class 12-ARTS"> </option>
             </datalist>
     </div>
-  
-  <!-- <div class="school">
-    <input type="text" name="" placeholder="School Name" formControlName="school">
-  </div> -->
+ 
   <div class="submit-btn">
-    <button type="submit" style="cursor: pointer;">Submit</button>
+    <button type="submit" class="btn btn-primary btn-sm" style="background-color: #eb2026;border-color: #bc0006; width:80px;">Submit</button>
   </div>
   
   </form>
-        <a href="#" class="Search-btn-mob">Search</a>
-        <a href="#">cart</a>
-        <a href="#">sign up</a>
+         <div class="user_cart_container">
+          <a [routerLink]="['/signin']">Sign Up</a>
+        <a [routerLink]="['/cart']"><svg version="1.1" id="Capa_1" fill="white" 
+          width="20px" height="15px" viewBox="0 0 510 510" xml:space="preserve">
+       <g class="shopping-cart-logo">
+         
+         <g id="shopping-cart">
+           <path   d="M153,408c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S181.05,408,153,408z M0,0v51h51l91.8,193.8L107.1,306
+             c-2.55,7.65-5.1,17.85-5.1,25.5c0,28.05,22.95,51,51,51h306v-51H163.2c-2.55,0-5.1-2.55-5.1-5.1v-2.551l22.95-43.35h188.7
+             c20.4,0,35.7-10.2,43.35-25.5L504.9,89.25c5.1-5.1,5.1-7.65,5.1-12.75c0-15.3-10.2-25.5-25.5-25.5H107.1L84.15,0H0z M408,408
+             c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S436.05,408,408,408z"/>
+         </g>
+        
+        </g>
+       </svg> <span >Cart</span></a>
+        
         <!-- <a href="#">About</a>
-        <a href="#">Faq</a>
         <a href="#">Contact</a> -->
+      </div>
+        <div class="mobile-header">
+          <a href="#" class="search-icon"><svg version="1.1" id="Capa_1" x="0px" y="0px"
+            width="20px" height="20px" viewBox="0 0 485.213 485.213" style="enable-background:new 0 0 485.213 485.213;"
+            xml:space="preserve">
+         <g>
+           <g>
+             <path d="M471.882,407.567L360.567,296.243c-16.586,25.795-38.536,47.734-64.331,64.321l111.324,111.324
+               c17.772,17.768,46.587,17.768,64.321,0C489.654,454.149,489.654,425.334,471.882,407.567z"/>
+             <path d="M363.909,181.955C363.909,81.473,282.44,0,181.956,0C81.474,0,0.001,81.473,0.001,181.955s81.473,181.951,181.955,181.951
+               C282.44,363.906,363.909,282.437,363.909,181.955z M181.956,318.416c-75.252,0-136.465-61.208-136.465-136.46
+               c0-75.252,61.213-136.465,136.465-136.465c75.25,0,136.468,61.213,136.468,136.465
+               C318.424,257.208,257.206,318.416,181.956,318.416z"/>
+             <path d="M75.817,181.955h30.322c0-41.803,34.014-75.814,75.816-75.814V75.816C123.438,75.816,75.817,123.437,75.817,181.955z"/>
+           </g>
+         </g>
+         </svg></a>
+          <a [routerLink]="['/cart']" class="search-icon"><svg version="1.1" id="Capa_1"  x="0px" y="0px"
+            width="20px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+         <g>
+           <g id="shopping-cart">
+             <path d="M153,408c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S181.05,408,153,408z M0,0v51h51l91.8,193.8L107.1,306
+               c-2.55,7.65-5.1,17.85-5.1,25.5c0,28.05,22.95,51,51,51h306v-51H163.2c-2.55,0-5.1-2.55-5.1-5.1v-2.551l22.95-43.35h188.7
+               c20.4,0,35.7-10.2,43.35-25.5L504.9,89.25c5.1-5.1,5.1-7.65,5.1-12.75c0-15.3-10.2-25.5-25.5-25.5H107.1L84.15,0H0z M408,408
+               c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S436.05,408,408,408z"/>
+           </g>
+          </g>
+         </svg>
+         </a>
+          <a href="#"  class="user-icon"><svg version="1.1" id="Capa_1" x="0px" y="0px"
+            width="20px" height="20px" viewBox="0 0 485.211 485.21" style="enable-background:new 0 0 485.211 485.21;"
+            xml:space="preserve">
+         <g >
+           <path d="M394.235,333.585h-30.327c-33.495,0-60.653-27.158-60.653-60.654v-19.484c13.418-15.948,23.042-34.812,29.024-54.745
+             c0.621-3.36,3.855-5.02,6.012-7.33c11.611-11.609,13.894-31.2,5.185-45.149c-1.186-2.117-3.322-3.953-3.201-6.576
+             c0-17.784,0.089-35.596-0.023-53.366c-0.476-21.455-6.608-43.773-21.65-59.66c-12.144-12.836-28.819-20.479-46.022-23.75
+             c-21.739-4.147-44.482-3.937-66.013,1.54c-18.659,4.709-36.189,15.637-47.028,31.836c-9.598,14.083-13.803,31.183-14.513,48.036
+             c-0.266,18.094-0.061,36.233-0.116,54.371c0.413,3.631-2.667,6.088-4.058,9.094c-8.203,14.881-4.592,35.155,8.589,45.978
+             c3.344,2.308,3.97,6.515,5.181,10.142c5.748,17.917,15.282,34.487,27.335,48.925v20.138c0,33.496-27.157,60.654-60.651,60.654
+             H90.978c0,0-54.964,15.158-90.978,90.975v30.327c0,16.759,13.564,30.321,30.327,30.321h424.562
+             c16.759,0,30.322-13.562,30.322-30.321V424.56C449.199,348.749,394.235,333.585,394.235,333.585z"/>
+         </g>
+         </svg>
+         </a>
+        </div>
       </nav>
-  
+
     </div>
   
   </header>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ 
 
-<script>
 
-	$(document).ready(function(){
-
-		var showHeaderAt = 150;
-
-		var win = $(window),
-				body = $('body');
-
-		// Show the fixed header only on larger screen devices
-
-		if(win.width() > 400){
-
-			// When we scroll more than 150px down, we set the
-			// "fixed" class on the body element.
-
-			win.on('scroll', function(e){
-
-				if(win.scrollTop() > showHeaderAt) {
-					body.addClass('fixed');
-				}
-				else {
-					body.removeClass('fixed');
-				}
-			});
-
-		}
-
-	});
-
-</script>
