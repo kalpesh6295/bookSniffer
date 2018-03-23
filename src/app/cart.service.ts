@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
-
+import { Subject } from 'rxjs';
 @Injectable()
 export class CartService {
 cart=[];
-  constructor() { }
+Items=0;
+
+  constructor() { 
+   
+  }
 
 }

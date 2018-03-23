@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import   'firebase/firestore';
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
-// import $ from 'jquery';
+import $ from 'jquery';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit,OnDestroy {
 
   constructor(private router:Router) {
   
@@ -44,7 +44,7 @@ export class FormComponent implements OnInit {
     
     TxtType.prototype.tick = function() {
       var i = this.loopNum % this.toRotate.length;
-      var fullTxt = this.toRotate[i];
+      var fullTxt = this.toRotate[i]; 
     
       if (this.isDeleting) {
       this.txt = fullTxt.substring(0, this.txt.length - 1);
@@ -88,9 +88,10 @@ export class FormComponent implements OnInit {
       css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
       document.body.appendChild(css);
     };
-   
  
   }
-  
+ngOnDestroy(){
+  this.fetchBooks.reset;
+}
 
 }
