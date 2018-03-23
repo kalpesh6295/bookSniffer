@@ -209,9 +209,10 @@ input{height: 30px; border: 1px solid black; padding:0px 0px 0px 10px;}
 	height: 80px;
 	width: 100vw;
 	position: absolute;
-	top:80px;
+	top:0px;
 	right: 0px;
 	background-color: red;
+	z-index: 10;
 
 
 }
