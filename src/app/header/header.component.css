@@ -1,6 +1,7 @@
 .mobile-header{visibility: hidden;}
-.header-fixed {    background: #006699;
-	box-shadow:0 1px 1px #ccc;
+.header-fixed {  
+	background: linear-gradient(to right,#7199c7,#28babe, #38b2c0 20%, #7199c7 );  
+   box-shadow:0 1px 1px #ccc;
 	padding: 20px 40px;
 	height: 80px;
 	color: #ffffff;
@@ -114,7 +115,7 @@ body.fixed .header-fixed .header-limiter nav {
 	display: inline-block;
 }
 
-input{height: 30px; border: 1px solid black; padding:0px 0px 0px 10px;}
+input{height: 30px;padding:0px 0px 0px 10px;   border:none; padding-left: 8px;border-radius: 3px; }
 .submit-btn{
 	display: flex;
 	float: right;
