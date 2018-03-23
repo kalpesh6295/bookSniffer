@@ -16,12 +16,15 @@ export class HeaderComponent implements OnInit {
     class : new FormControl,
     school : new FormControl
   });
-
+  sliderForm="slider_hidden";
   constructor(private router:Router) { }
   fetchData(UserData){
     this.router.navigate([UserData.medium.toLowerCase(),UserData.board.toLowerCase(),UserData.class.split(' ')[1].toLowerCase()]);
       }
           
+  showForm(){
+    this.sliderForm="slider_visible";
+  }
 
   ngOnInit() {
     console.log(this.router.url);

@@ -200,3 +200,18 @@ input{height: 30px; border: 1px solid black; padding:0px 0px 0px 10px;}
 		margin-left: -27%;
 	}
 }
+.slider_hidden{
+    visibility: hidden;
+}
+
+.slider_visible{
+	visibility: visible;
+	height: 80px;
+	width: 100vw;
+	position: absolute;
+	top:80px;
+	right: 0px;
+	background-color: red;
+
+
+}
