@@ -24,8 +24,8 @@
       <div class="class">
           <input list="studentClass"  placeholder="class" formControlName="class">
             <datalist id="studentClass" >
-              <option value="class 1" class="check"></option>
-              <option value="class 2" class="check"></option>
+              <option value="class 1" ></option>
+              <option value="class 2"></option>
               <option value="class 3"></option>
               <option value="class 4"></option>
               <option value="class 5"></option>
@@ -50,7 +50,13 @@
   </form>
          <div class="user_cart_container">
           <a [routerLink]="['/signin']">Sign Up</a>
+<<<<<<< HEAD
         <a [routerLink]="['/cart']"><svg version="1.1" id="Capa_1" fill="#ffffff" 
+=======
+        <a [routerLink]="['/cart']">
+          <span style="float: right;">{{cartService.Items}}</span>
+          <svg version="1.1" id="Capa_1" fill="white" 
+>>>>>>> 24056fa795929b158dd8b4ab2deab1598f6f6d93
           width="20px" height="15px" viewBox="0 0 510 510" xml:space="preserve">
        <g class="shopping-cart-logo">
          
@@ -67,8 +73,13 @@
         <!-- <a href="#">About</a>
         <a href="#">Contact</a> -->
       </div>
-        <div class="mobile-header">
-          <a href="#" class="search-icon"><svg version="1.1" id="Capa_1" x="0px" y="0px"
+        <div class="mobile-header" >
+          <div class={{sliderForm}}>
+
+          </div>
+
+          <!-- ----------------------------- search icon svg code start here  -------------------------- -->
+          <a (click)="showForm()" class="search-icon"><svg version="1.1" id="Capa_1" x="0px" y="0px"
             width="20px" height="20px" viewBox="0 0 485.213 485.213" style="enable-background:new 0 0 485.213 485.213;"
             xml:space="preserve">
          <g>
@@ -83,7 +94,15 @@
            </g>
          </g>
          </svg></a>
-          <a [routerLink]="['/cart']" class="search-icon"><svg version="1.1" id="Capa_1"  x="0px" y="0px"
+
+         <!-- ----------------------------- search icon svg code end here  -------------------------- -->
+
+         <!-- ----------------------------- cart icon svg code start here  -------------------------- -->
+
+
+          <a [routerLink]="['/cart']" class="search-icon">
+            <span style="float: right;">{{cartService.Items}}</span>
+            <svg version="1.1" id="Capa_1"  x="0px" y="0px"
             width="20px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
          <g>
            <g id="shopping-cart">
@@ -95,6 +114,10 @@
           </g>
          </svg>
          </a>
+         <!-- ----------------------------- cart icon svg code end here  -------------------------- -->
+
+
+         <!-- ----------------------------- user icon svg code sy=tart here  -------------------------- -->
           <a href="#"  class="user-icon"><svg version="1.1" id="Capa_1" x="0px" y="0px"
             width="20px" height="20px" viewBox="0 0 485.211 485.21" style="enable-background:new 0 0 485.211 485.21;"
             xml:space="preserve">
@@ -110,6 +133,7 @@
          </g>
          </svg>
          </a>
+         <!-- ----------------------------- user icon svg code end here  -------------------------- -->
         </div>
       </nav>
 

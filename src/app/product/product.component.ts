@@ -1,9 +1,9 @@
-import { Component, OnInit, Injectable, Inject } from '@angular/core';
+import { Component, OnInit, Injectable, Inject,OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
-
+import {CartService} from '../cart.service';
 export interface subject{
   description?:String,
   name?:String,
@@ -15,16 +15,16 @@ export interface subject{
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit,OnDestroy {
  url;
  list;
  subjects:subject[] 
 subjectData:Observable<subject[]>;
 cart=[];
-
+subscription;
 //  subjects:subject[];
-  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService,public afs: AngularFirestore,private router: Router) {
-    this.router.events.subscribe(()=>{
+  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService,public afs: AngularFirestore,private router: Router,public cartService:CartService) {
+   this.subscription= this.router.events.subscribe(()=>{
       this.url = this.router.url;
       this.list= this.url.split('/');
   this.afs.collection(this.list[1].toLowerCase()).doc(this.list[2].toLowerCase()).collection(this.list[3].toLowerCase()).valueChanges()
@@ -54,7 +54,9 @@ if(found==0){
   this.cart.push({name:name,description:description,image:image,price:price,amount:1});
   this.storage.set('cart',this.cart);
 }
-console.log(this.cart);
+// console.log(this.cart);
+this.cartService.Items=this.cart.length;
+console.log(this.cartService.Items)
 }
 
 buyNow(name,description,image,price){
@@ -64,7 +66,7 @@ buyNow(name,description,image,price){
     cart:this.cart
 
   }).then(()=>{
-    console.log('hip hip hurray')
+    // console.log('hip hip hurray')
   })
   
   this.router.navigate(['cart'])
@@ -76,5 +78,8 @@ buyNow(name,description,image,price){
   ngOnInit() {
     this.storage.get('cart');
     
+}
+ngOnDestroy(){
+  this.subscription.unsubscribe();
 }
 }

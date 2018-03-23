@@ -201,3 +201,19 @@ input{height: 30px;padding:0px 0px 0px 10px;   border:none; padding-left: 8px;bo
 		margin-left: -27%;
 	}
 }
+.slider_hidden{
+    visibility: hidden;
+}
+
+.slider_visible{
+	visibility: visible;
+	height: 80px;
+	width: 100vw;
+	position: absolute;
+	top:0px;
+	right: 0px;
+	background-color: red;
+	z-index: 10;
+
+
+}

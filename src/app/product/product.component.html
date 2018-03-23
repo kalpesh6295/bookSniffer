@@ -1,21 +1,6 @@
 <app-header></app-header>
 <div class="book_data">
-  <!-- <figure  *ngFor="let subject of subjects" class="snip1171 col-xs-12 col-sm-12 col-md-4 col-lg-4 orange">
-    <img src={{subject.image}} height=350px width=400px alt="sample52"/>
-    <div class="price">{{subject.price}}</div>
-    <figcaption>
-      <h3>{{subject.name|uppercase}}</h3>
-    <div>
-      <h3>
-        {{subject.description|uppercase}}
-      </h3>
-    </div>
-      <a style="cursor:pointer" (click)=addToCart(subject.name,subject.description,subject.image,subject.price)>Add to Cart</a>
-        <div class="buy-now" style="float: left; margin-top: 20px;">
-          <p><button style="cursor:pointer"  (click)=buyNow(subject.name,subject.description,subject.image,subject.price)>BUY NOW</button></p>
-        </div>
-    </figcaption>
-  </figure> -->
+ 
   <div  *ngFor="let subject of subjects" class="snip1171 col-xs-12 col-sm-12 col-md-4 col-lg-4 blue">
       <img  src={{subject.image}}  alt="sample52"/>
       <div class="price"><span style="font-weight:200;">&#8377;</span> {{subject.price}}</div>
