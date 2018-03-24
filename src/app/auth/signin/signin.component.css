@@ -112,3 +112,13 @@
 .card .btn:hover {
  color: #111111;
 }
+@media screen and (max-width:700px){
+  .wrapper{width: 0px;
+    height: 0px;
+    margin-top: 0px;}
+    .button{width: 40px; }
+    /* .card{width: 0px;} */
+    .button__cta{width: 10px; margin-left: -80px; z-index: -500000;display: none;}
+    .card{margin-left: -200px; margin-top:50px;  left: 50px;  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 5px 2px rgba(0, 0, 0, 0.22);}
+  
+  }

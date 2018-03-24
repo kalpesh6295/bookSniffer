@@ -1,6 +1,6 @@
 body{margin: 0px auto;}
-.test{height: 30px;width: 30px; background-color: red; float: right; margin: 10px 200px 0 0;}
-.header-image {width: 100%; height: 400px; background-image: url("assets/images/book12.jpg");}
+.test{height: 30px;width: 30px;  float: right; margin: 10px 200px 0 0;}
+.header-image {width: 100%; height: 400px; background-image: url("assets/images/book12.jpg"); }
 .logo-home{margin: 0px auto; margin-top: 90px; position: absolute; margin-left: 45%; }
 .logo-home img{width: 145px; margin: 0px auto; height: 120px; border-radius: 12px;}
 .typewrite-body{margin-top: -190px; text-align: center;}
@@ -30,9 +30,9 @@ input {height:40px ;  outline: none; border:none; padding-left: 8px;border-radiu
 button{height: 40px;  width: 100px; background-color: #cb202d; border: none; color: #fff; cursor: pointer; border-radius: 3px; } 
 button:hover{color:black;}
 .about-us{margin-top: 100px; margin-left: 20%;}
-.about-us h2{font-size: 32px;
+.about-us h2{font-size: 36px;
     margin-left: 20%;
-    line-height: 36px;
+    line-height: 40px;
     font-family: Genath-Regular, serif;
     font-weight: inherit;
 color: #333333;}
@@ -48,7 +48,7 @@ ul{list-style-type: none; }
     font-family: "ProximaNova-SemiBold", "Proxima-Nova", sans-serif;
     font-weight: inherit;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 32px;
     margin: 0;
     padding: 0;
     }
@@ -63,6 +63,7 @@ ul{list-style-type: none; }
 }
     
 @media screen and (max-width:600px){
+  .svg-logo{margin-left: 10px; margin-right: 10px;}
   .form-body{display: block; margin-top: -60px;}
   .logo-home{margin: 0px auto; margin-top: 40px; position: absolute; margin-left: 28%; }
   .logo-home img{width: 145px; height: 120px; border-radius: 12px;}
@@ -152,3 +153,146 @@ ul{list-style-type: none; }
     .about-us{margin-left:30%; }
 }
 
+.table_center{
+  display:table-cell;
+  vertical-align: middle;
+}
+.drop-down{
+    display: inline-block;
+    position: relative;
+}
+
+.drop-down__button{
+  background: linear-gradient(to right,#3d6def, #8FADFE);
+  display: inline-block;
+  line-height: 40px;
+  padding: 0 5px;
+  width: 134px;
+  text-align: left;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.2);
+  cursor: pointer;
+ text-align: center;
+}
+
+.drop-down__name {
+    font-size: 12px;
+    color: #fff;
+    
+    letter-spacing: 1px;
+
+}
+
+.drop-down__icon {
+    width: 18px;
+    vertical-align: middle;
+    height: 18px;
+    border-radius: 50%;
+    transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  
+}
+
+
+
+.drop-down__menu-box {
+    position: relative;
+    width: 100%;
+    left: 0;
+    background-color: #fff;
+    border-radius: 4px;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+     transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+ visibility: hidden;
+opacity: 0;
+  margin-top: 5px;
+}
+
+.drop-down__menu {
+    margin: 0;
+    padding: 0 13px;
+    list-style: none;
+    
+  
+}
+.drop-down__menu-box:before{
+  content:'';
+  background-color: transparent;
+  border-right: 8px solid transparent;
+  position: absolute;
+  border-left: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+  border-top: 8px solid transparent;
+  top: -15px;
+  right: 18px;
+
+}
+
+.drop-down__menu-box:after{
+  content:'';
+  background-color: transparent;
+}
+
+.drop-down__item {
+    font-size: 13px;
+    padding: 13px 0;
+    text-align: left;
+    font-weight: 500;
+    color: #909dc2;
+    cursor: pointer;
+    position: relative;
+    border-bottom: 1px solid #e0e2e9;
+}
+
+.drop-down__item-icon {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 0px;
+    fill: #8995b6;
+  
+}
+
+.drop-down__item:hover .drop-down__item-icon{
+  fill: #3d6def;
+}
+
+.drop-down__item:hover{
+  color: #3d6def;
+}
+
+
+
+.drop-down__item:last-of-type{
+  border-bottom: 0;
+}
+
+
+.drop-down--active .drop-down__menu-box{
+visibility: visible;
+opacity: 1;
+  margin-top: 15px;
+}
+
+.drop-down__item:before{
+  content:'';
+  position: absolute;
+width: 3px;
+height: 28px;
+background-color: #3d6def;
+left: -13px;
+top: 50%;
+transform: translateY(-50%);
+  display:none;
+}
+
+.drop-down__item:hover:before{
+  display:block;
+}

@@ -14,7 +14,7 @@
             </datalist>
         </div>
         <div class="board">
-            <input list="studentBoard"  placeholder="board" formControlName="board">
+            <input list="studentBoard"  placeholder="Board" formControlName="board">
             <datalist id="studentBoard" >
               <option value="CBSE">
               <option value="RBSE">
@@ -22,7 +22,7 @@
               </datalist>
           </div>
       <div class="class">
-          <input list="studentClass"  placeholder="class" formControlName="class">
+          <input list="studentClass"  placeholder="Class" formControlName="class">
             <datalist id="studentClass" >
               <option value="class 1" ></option>
               <option value="class 2"></option>
@@ -50,13 +50,7 @@
   </form>
          <div class="user_cart_container">
           <a [routerLink]="['/signin']">Sign Up</a>
-<<<<<<< HEAD
         <a [routerLink]="['/cart']"><svg version="1.1" id="Capa_1" fill="#ffffff" 
-=======
-        <a [routerLink]="['/cart']">
-          <span style="float: right;">{{cartService.Items}}</span>
-          <svg version="1.1" id="Capa_1" fill="white" 
->>>>>>> 24056fa795929b158dd8b4ab2deab1598f6f6d93
           width="20px" height="15px" viewBox="0 0 510 510" xml:space="preserve">
        <g class="shopping-cart-logo">
          
@@ -74,12 +68,57 @@
         <a href="#">Contact</a> -->
       </div>
         <div class="mobile-header" >
-          <div class={{sliderForm}}>
-
-          </div>
-
+            <div class="{{sliderForm}}">
+                
+                 <form class=" query-form query-form-mobile" (ngSubmit)="fetchData(fetchBooks.value)" [formGroup]="fetchBooks">
+                  <div class="medium medium-mobile-search">
+                   <input list="studentMedium"  placeholder="Medium" formControlName="medium">
+                   <datalist id="studentMedium" >
+                     <option value="English">
+                     <option value="Hindi">
+                     </datalist>
+                 </div>
+                 <div class="board board-mobile-search">
+                     <input list="studentBoard"  placeholder="board" formControlName="board">
+                     <datalist id="studentBoard" >
+                       <option value="CBSE">
+                       <option value="RBSE">
+                       <option value="ICSE">
+                       </datalist>
+                   </div>
+               <div class="class class-mobile-search">
+                   <input list="studentClass"  placeholder="class" formControlName="class">
+                     <datalist id="studentClass" >
+                       <option value="class 1" ></option>
+                       <option value="class 2"></option>
+                       <option value="class 3"></option>
+                       <option value="class 4"></option>
+                       <option value="class 5"></option>
+                       <option value="class 6">  </option>
+                       <option value="class 7"></option>
+                       <option value="class 8"></option>
+                       <option value="class 9"></option>
+                       <option value="class 10"></option>
+                       <option value="class 11-SCIENCE"></option>
+                       <option value="class 11-COMMERCE"></option>
+                       <option value="class 11-ARTS"></option>
+                       <option value="class 12-SCIENCE"></option>
+                       <option value="class 12-COMMERCE"></option>
+                       <option value="class 12-ARTS"> </option>
+                     </datalist>
+             </div>
+             <div class="submit-btn submit-btn-mobile-search  ">
+                 <button type="submit" class="btn btn-primary btn-sm" (click)="sliderForm='slider_hidden'">Submit</button>
+               </div>
+          
+           
+           </form>
+          
+          </div> 
+         
+         
           <!-- ----------------------------- search icon svg code start here  -------------------------- -->
-          <a (click)="showForm()" class="search-icon"><svg version="1.1" id="Capa_1" x="0px" y="0px"
+          <a (click)="showForm()" class="search-icon "><svg version="1.1" id="Capa_1" x="0px" y="0px"
             width="20px" height="20px" viewBox="0 0 485.213 485.213" style="enable-background:new 0 0 485.213 485.213;"
             xml:space="preserve">
          <g>
@@ -101,7 +140,9 @@
 
 
           <a [routerLink]="['/cart']" class="search-icon">
-            <span style="float: right;">{{cartService.Items}}</span>
+           
+            <span style="float: right;">{{cartService.Items}}
+              </span>
             <svg version="1.1" id="Capa_1"  x="0px" y="0px"
             width="20px" height="20px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
          <g>
@@ -118,7 +159,7 @@
 
 
          <!-- ----------------------------- user icon svg code sy=tart here  -------------------------- -->
-          <a href="#"  class="user-icon"><svg version="1.1" id="Capa_1" x="0px" y="0px"
+          <a [routerLink]="['/signin']" class="user-icon"><svg version="1.1" id="Capa_1" x="0px" y="0px"
             width="20px" height="20px" viewBox="0 0 485.211 485.21" style="enable-background:new 0 0 485.211 485.21;"
             xml:space="preserve">
          <g >
@@ -141,5 +182,3 @@
   
   </header>
  
-
-

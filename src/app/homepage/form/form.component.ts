@@ -3,14 +3,14 @@ import { FormControl, FormGroup } from '@angular/forms';
 import   'firebase/firestore';
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
-import $ from 'jquery';
+// import $ from 'jquery';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit,OnDestroy {
-
+dropdown_state=true;
   constructor(private router:Router) {
   
    }
@@ -88,10 +88,20 @@ export class FormComponent implements OnInit,OnDestroy {
       css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
       document.body.appendChild(css);
     };
+
+    // --------------------------------------------menu--------------------------------------------
+// document.ready(function(){
+//   $('#dropDown').click(function(){
+//     $('.drop-down').toggleClass('drop-down--active');
+//   });
+// });
+
  
   }
 ngOnDestroy(){
   this.fetchBooks.reset;
 }
+
+
 
 }

@@ -5,7 +5,7 @@
   width: 80vw;
   height: 100vh;
   margin-left: 15vw;
-  
+  background-color:  linear-gradient(#7199c7,#28babe, #38b2c0 20%, #7199c7 ); 
   align-items: center;
   justify-content: center;
   
@@ -101,7 +101,7 @@ app-header{
     top: 0;
   }
   .snip1171 p {
-    font-size: 0.8em;
+    font-size: 0.6em;
     font-weight: 500;
     text-align: center;
     margin: 0;
@@ -209,7 +209,19 @@ app-header{
       min-width: 150px;
       max-width: 150px;
       max-height: 240px;
-   
+      box-shadow: 0 10px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.24);
+      margin-top: 20px;
+    }
+  
+    .snip1171.blue .price{
+      height: 33px;
+     font-size: 14px;
+      text-align: center;
+      padding: 0px 5px 3px 2px;
+    }
+    .snip1171.blue .price:before{
+      border-width: 0 12px 33px 0;
+      text-align: center;
     }
     .book_data{
       width: 100vw;
