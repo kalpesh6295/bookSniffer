@@ -1,9 +1,12 @@
-
+app-header{
+  position: relative;
+  top: 0px;
+}
 .book_data{
-  position: absolute;
+  position: relative;
   margin-top: 60px;
   width: 80vw;
-  height: 100vh;
+  min-height: calc(100vh - 151px);
   margin-left: 15vw;
   background-color:  linear-gradient(#7199c7,#28babe, #38b2c0 20%, #7199c7 ); 
   align-items: center;
@@ -15,12 +18,14 @@
   .book_data{
     width: 93vw;
     margin-left: calc(47% - 310px);  
+    min-height: calc(100vh - 151px);
   }
 }
 @media screen and (max-width:648px){
   .book_data{
     width: 100vw;
     margin-left: calc(48% - 165px);  
+    min-height: calc(100vh - 151px);
   }
   .snip1171  {
     width: 100vw;
@@ -33,6 +38,7 @@
     width: 100vw;
     margin: 0;
     margin-top: 40px;
+    min-height: calc(100vh - 151px);
   }
 }
 app-header{
@@ -71,7 +77,7 @@ app-header{
   }
   .snip1171 img {
     max-width: 100%;
-    z-index: -1;
+    /* z-index: -1; */
     height:350px;
      width:400px;
   }
@@ -226,6 +232,7 @@ app-header{
     .book_data{
       width: 100vw;
       margin-left: calc(45% - 142px);  
+      min-height: calc(100vh - 151px);
     }
     .snip1171  {
       width: 100vw;
@@ -246,6 +253,7 @@ app-header{
     .book_data{
       width: 100vw;
       margin-left: calc(45% - 169px);  
+      min-height: calc(100vh - 151px);
     }
     .snip1171  {
       width: 100vw;
@@ -266,6 +274,7 @@ app-header{
     .book_data{
       width: 100vw;
       margin-left: calc(45% - 189px);  
+      min-height: calc(100vh - 151px);
     }
     .snip1171  {
       width: 100vw;
