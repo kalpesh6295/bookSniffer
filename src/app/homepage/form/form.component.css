@@ -1,4 +1,4 @@
-body{margin: 0px auto;}
+body{margin: 0px auto; }
 .test{height: 30px;width: 30px;  float: right; margin: 10px 200px 0 0;}
 .header-image {width: 100%; height: 400px; background-image: url("assets/images/book12.jpg"); }
 .logo-home{margin: 0px auto; margin-top: 90px; position: absolute; margin-left: 45%; }
@@ -38,22 +38,22 @@ button:hover{color:black;}
 color: #333333;}
 .about-us-content{max-width: 840px; }
 ul{list-style-type: none; }
-.section1{ width: 360px; height: 100px; text-align: left;} 
+.section1{ width: 360px; height: 100px; text-align: left; } 
 .section2{width: 360px; height: 100px; text-align: left;}
 .section3{margin-left: 460px;   width: 360px; height: 100px; margin-top: -205px ; text-align: left;}
 .section4{margin-left: 460px;  width: 360px; height: 100px; text-align: left;}
 .section h3{font-size: 17px;
     text-transform: uppercase;
     color: #333333;
-    font-family: "ProximaNova-SemiBold", "Proxima-Nova", sans-serif;
-    font-weight: inherit;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-weight: 600;
     font-size: 14px;
     line-height: 32px;
     margin: 0;
     padding: 0;
     }
  .section p{
- 	font-family: ProximaNova-Regular, Proxima-Nova, sans-serif;
+ 	font-family: "Comic Sans MS", cursive, sans-serif;
  	    font-size: 14px;
     line-height: 18px;
     color: #333333;
@@ -98,6 +98,7 @@ ul{list-style-type: none; }
   .board input{width: 80%;}
   .class input{width:270px;}
   button{width: 270px;margin-left: -10px;}
+  .section{margin-left: 10px;}
   .typewrite-body{margin-top: -240px; text-align: center;}
 }
 
@@ -109,6 +110,7 @@ ul{list-style-type: none; }
   .board input{width: 90%;}
   .class input{width:345px;}
   button{width: 345px;margin-left: -10px;}
+  .section{margin-left: 0px; width: 100%;}
   .typewrite-body{margin-top: -250px; text-align: center;}
 }
 @media screen and (min-width: 420px) and (max-width:760px){
@@ -120,6 +122,7 @@ ul{list-style-type: none; }
   .class input{width:375px;}
   button{width: 375px;margin-left: -10px;}
   .typewrite-body{margin-top: -240px; text-align: center;}
+  .section{margin-left: 5px; width: 100%;}
 }
 
 @media screen and (min-width: 760px) and (max-width:1020px){
@@ -134,11 +137,11 @@ ul{list-style-type: none; }
     .class input{width:615px;}
   button{width: 615px;margin-left: -10px;}
   .about-us{ margin-left: -3%;}
- 
-  .section1{ width: 260px; height: 100px; } 
-  .section2{width: 260px; height: 100px; }
-  .section3{ width: 300px; height: 100px; } 
-  .section4{width: 300px; height: 100px; }
+  
+  .section1{ width: 260px; height: 100px;  margin-left: 50px;} 
+  .section2{width: 260px; height: 100px; margin-left: 50px; }
+  .section3{ width: 260px; height: 100px; } 
+  .section4{width: 260px; height: 100px; }
   .typewrite-body{margin-top: -250px; text-align: center;}
 }
 
