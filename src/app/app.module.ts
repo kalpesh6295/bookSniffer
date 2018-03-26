@@ -39,10 +39,9 @@ const appRoutes:Routes=[
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},
   
-  {path : 'signin', component : SigninComponent},
-  {path : 'signup', component : SignUpComponent},
   {path: ':medium/:board/:class', component: ProductComponent},
-  {path : 'reset',component:ForgetComponent}
+  {path : 'reset',component:ForgetComponent},
+  {path:'**', redirectTo:''}
 ]
 
 
