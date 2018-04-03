@@ -4,6 +4,7 @@ import {AuthService} from '../auth.service';
 import { Router } from "@angular/router";
 import { CartService } from '../../cart.service';
 
+
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -14,22 +15,73 @@ export class SigninComponent implements OnInit {
   constructor(private authservice:AuthService,private route:Router,public cartService:CartService) { }
 
   public show = false;
-
-  signinForm = new FormGroup({
+signin_show=true;
+signup_show = false;
+recover_show = false;
+  signInForm = new FormGroup({
     email : new FormControl,
     password : new FormControl
   });
+ShowSignup(){
+  this.signin_show=false;
+  this.signup_show=true;
+  this.recover_show=false;
+}
+ShowSignin(){
+  this.signin_show=true;
+  this.signup_show=false;
+  this.recover_show=false;
+}
+ShowRecover(){
+  this.signin_show=false;
+  this.signup_show=false;
+  this.recover_show=true;
+}
 
-  signIn(userform){
+  signin(userform){
    this.authservice.signin(userform.email,userform.password);
     console.log("Done!");
   }
+  signUpForm = new FormGroup({
+    email : new FormControl,
+    password : new FormControl,
+    username: new FormControl
+  });
 
-  forget(){
-    this.route.navigate(['reset']);
+  signup(userform){
+   this.authservice.signin(userform.email,userform.password);
+    console.log("Done!");
+  }
+  recoverForm = new FormGroup({
+    email : new FormControl,
+   
+  });
+
+  recover(userform){
+   this.authservice.forgetpassword(userform.email);
+    console.log("Done!");
   }
 
+  
   ngOnInit() {
+    // $(".message a.signIn,.message a.createAccount").on("click", function() {
+    //   $(".register-form,.login-form").animate(
+    //     {
+    //       height: "toggle",
+    //       opacity: "toggle"
+    //     },
+    //     "slow"
+    //   );
+    // });
+    // $(".reoverPassword,.backToLogin").on("click", function() {
+    //   $(".reset-form,.login-form").animate(
+    //     {
+    //       height: "toggle",
+    //       opacity: "toggle"
+    //     },
+    //     "slow"
+    //   );
+    // });
   }
   check_click(){
     console.log(this.cartService.main_container_click);

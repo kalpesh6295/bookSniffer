@@ -8,7 +8,7 @@
   z-index: 1000;
 }
 * {
-  margin: 20px auto;
+  margin: 0px auto;
 }
 
 
@@ -23,153 +23,168 @@
   background: linear-gradient(to right, #dfe6e9 50%, #fff 50%);
 }
 
-.button {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: relative;
-  top: 0%;
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
-.button--checkbox {
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.login-page > img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px;
+  letter-spacing: 1px;
+  border:1px solid #333333;
+}
+
+.group {
+  position: relative;
+  margin-bottom: 35px;
+}
+.group input {
+  font-size: 1em;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #dedede;
+}
+.group input:focus {
+  outline: none;
+}
+.group label {
+  color: #ccc;
+  font-size: 1em;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.group input:focus ~ label, .group input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color:#00bcd4;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.bar:before, .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: -1px;
+  position: absolute;
+  background:#00bcd4;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
+.group input:focus ~ .bar:before, .group input:focus ~ .bar:after {
+  width: 50%;
+}
+
+.remember {
+  text-align: left;
+  margin-bottom: 20px;
+}
+.remember label > input {
   display: none;
 }
-.button__cta .card__button {
-  border: 1px solid #57606f;
-  padding: 10px 30px;
-  border-radius: 3px;
-  cursor: pointer;
-  color: #ffffff;
-  background-color:  #006699;
-  border-color:  #006699;
-  font-weight: 500;
-  transition: all .4s ease;
-  margin-top: 80%;
-}
-.button__cta .card__button:hover {
-   color: #333333;
-}
-.button--checkbox:checked ~ .card {
-  left: 240px;
-}
-.button--checkbox:checked ~ .card input[type=text] {
-  margin-top: -400px;
-  visibility: hidden;
-}
-.button--checkbox:checked ~ .card .btn .btn__signup {
-  transform: translateY(-200%);
-}
-.button--checkbox:checked ~ .card .btn .btn__login {
-  top: 0;
-}
-
-.card {
-  display: grid;
-  height: 480px;
-  width: 300px;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  background: white;
-  overflow: hidden;
-  position: relative;
-  top: -50px;
-  left: 50px;
-  transition: all .3s ease;
-  position: absolute;
-}
-.card input {
-  display: block;
-  outline: none;
-  border: none;
-  margin-top: 0px;
-  /* padding: 0px; */
-  border-bottom: 1px solid #ccc;
-  transition: all .4s ease;
-
-}
-.card input::placeholder {
-  font-size: 16px;
-}
-.card .btn {
-  border: none;
-  border-radius: 5px;
-  background: #006699;
-  position: relative;
-  cursor: pointer;
-  color: white;
-  bottom: 10px;
-  height: 70px;
-  font-size: 18px;
-  overflow: hidden;
-  font-weight: 600;
- 
-
-}
-.card .btn > * {
+.remember label > i {
   display: inline-block;
-  width: 180px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10%;
+  margin-right: 5px;
+  vertical-align: middle;
+  border: 2px solid #bbb;
+  -webkit-box-shadow: inset 0 0 0 4px #fff;
+  box-shadow: inset 0 0 0 4px #fff;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+.remember label > span {
+  display: inline-block;
+  padding-bottom: 3px;
+  border-bottom: 2px dotted #fff;
+  /*text-transform: uppercase;*/
+  font-size: .9em;
+  color: #555;
+}
+.remember label > input:checked + i {
+  background:#00bcd4;
+  border: 2px solid#00bcd4;
+}
+.remember label:hover {
+  cursor: pointer;
+}
+
+.form button {
+  text-transform: uppercase;
+  outline: 0;
+ background: linear-gradient(to right,#3d6def, #8FADFE);
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.5 ease;
+  transition: all 0.5 ease;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 5px, rgba(0, 0, 0, 0.12) 0px 2px 10px;
+}
+.form button:hover, .form button:active, .form button:focus {
+ background:#006688;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px, rgba(0, 0, 0, 0.1) 0px 1px 5px;
+}
+.form .message {
+  margin: 30px 0 0;
+  color: #555;
+  font-size: .85em;
+}
+.form .message a {
+  color:#00bcd4;
+  text-decoration: none;
+}
+.form .recover a {
+  color:#00bcd4;
+  font-size: .85em;
+  text-decoration: none;
+}
+
+.active{
+  display: block;
+  opacity: 1;
   
-  transition: all .3s;
 }
-.card .btn__signup {
- vertical-align: middle;
+.inactive{
+  display: none;
+  opacity: 0;
 }
-.card .btn__login {
-  position: absolute;
-  top: 100%;
-  left: 20px;
-  
-}
-.card .btn:hover {
- color: #111111;
-}
-.signin-up-link{display: none;
-      justify-content: center;
-    text-align: center;}
-  .moblie-signin-form{
-    position: absolute;
-    top: 70%;
-    font-size: 13px;
-  }
-  .moblie-signin-form span{
-      padding-left: 3px;
-  }
-  @media screen and (max-width:700px){
-      .wrapper{width: 0px;
-        height: 0px;
-        margin-top: 0px;}
-        .button{width: 40px; }
-        .button__cta{width: 10px; margin-left: -80px; z-index: -500000;display: none;}
-        .card{margin-left: -200px; margin-top:50px;  left: 50px;  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 5px 2px rgba(0, 0, 0, 0.22);
-        max-height: 66vh;}
-        .signin-up-link{display: flex;}
-        .button--checkbox {
-          display: none;
-        }
-        .button__cta .card__button {
-          border: 1px solid #57606f;
-          padding: 10px 30px;
-          border-radius: 3px;
-          cursor: pointer;
-          color: #ffffff;
-          background-color:  #006699;
-          border-color:  #006699;
-          font-weight: 500;
-          transition: all .4s ease;
-          margin-top: 80%;
-        }
-        .button__cta .card__button:hover {
-           color: #333333;
-        }
-       .card {
-          left: 50px;
-        }
-       .card input[type=text] {
-          margin-top: -400px;
-          visibility: hidden;
-        }
-       .card .btn .btn__signup {
-          transform: translateY(-200%);
-        }
-       .card .btn .btn__login {
-          top: 0;
-        }
-      
-      }

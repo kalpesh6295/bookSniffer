@@ -37,6 +37,7 @@ firebase.initializeApp(config);
 const appRoutes:Routes=[
   {path: '',component: FormComponent},
   {path: 'cart', component: CartComponent},
+  {path: 'signin', component: SigninComponent},
   {path: 'checkout', component: CheckoutComponent},
   
   {path: ':medium/:board/:class', component: ProductComponent},
