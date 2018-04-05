@@ -24,6 +24,7 @@ import { AuthService } from "./auth/auth.service";
 import { ForgetComponent } from "./auth/forget/forget.component";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 const config = {
   apiKey: "AIzaSyDoV_rdaRnkk-myi6BpKpIbqkW7DGRo7Vs",
@@ -38,7 +39,7 @@ const appRoutes:Routes=[
   {path: '',component: FormComponent},
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},
-  
+ 
   {path: ':medium/:board/:class', component: ProductComponent},
   {path : 'reset',component:ForgetComponent},
   {path:'**', redirectTo:''}
@@ -57,7 +58,8 @@ const appRoutes:Routes=[
     SignUpComponent,
     ForgetComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ContactusComponent
   ],
   imports: [
     HttpClientModule,
