@@ -1,0 +1,45 @@
+    .order-heading{display: flex;justify-content: center;}
+    .order{width: 70%; margin-left: 30vw;}
+    .product{margin-top: 5%; width: 80%;}
+    .order-tab{border-bottom: solid 1px #F1F1F1;}
+    .date{padding-bottom: 15px;font-size: 12px;}
+    .order-details{display: flex;}
+    .order-id{color: #005688;width: 20%; padding-right: 30px;}
+    .order-name{width: 40%;}
+    ul{list-style-type: none; margin-top: 0px; padding-right: 10vw;}
+    li{line-height: 26px;}
+    .order-total{padding-right: 5vw;color: #005688; width: 10%;}
+    .order-status{color: #005688; width: 30%;text-align: center;text-transform: uppercase;font-size: 14px;}
+    .product-footer{display: flex; background-color: #f1f1f1; height: 30px; width: 72.7%;}
+    .product-footer button{ position:absolute; margin-left: 40.5vw;height: 30px; width: 170px; border: none; background-color: #005688; color: #ffffff; text-transform: uppercase; font-weight: 600;cursor: pointer;}
+    .order-status-msg p{margin-top: 0px; padding-left: 10px; font-weight: 600;color: #005688; }
+    a{text-decoration: none;color: #77787b;font-family: "montserrat";}
+    @media screen and (max-width: 700px){
+        
+        .order{display: block;width: 100%;margin-left: 0vw;}
+        .product{width: 100%}
+        .order-id{color: #005688;width: 10%; padding-right: 4px;}
+        ul{padding-right: 0vw;}
+        .order-name{width: 40%;}
+        .order-total{width: 18%;margin-left: 40px;padding-right: 2vw;}
+        .order-status-msg{display: none; width: 0px;}
+        .product-footer{ background-color: #ffffff; display:inline-flex;justify-content: center;width: 65%;}
+        .product-footer button{ position:relative;height: 28px; width: 140px; border: none;margin-top: -7px;}
+        .product{border-bottom: 1px solid #f1f1f1;}
+    }
+    @media screen and (min-width: 700px) and (max-width: 1000px){
+        .product{width: 100%;}
+      
+.order-id{color: #005688;width: 10%; padding-right: 4px;}
+        ul{padding-right: 0vw;}
+        .order-name{width: 40%;margin-left: 20px;}
+        .order-total{width: 18%;margin-left: 40px;padding-right: 2vw;}
+       .order-status-msg{display: block;}
+        .product-footer{background-color: #f1f1f1; height: 30px; width: 65%;position: relative;}
+       .product-footer button{ position:absolute; margin-left: 46vw;height: 30px; width: 170px; border: none; background-color: #005688; color: #ffffff; text-transform: uppercase; font-weight: 600;cursor: pointer;}
+    }
+    
+    @media screen and (min-width: 1000px) and (max-width: 1400px){
+        
+    }
+    

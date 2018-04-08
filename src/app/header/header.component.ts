@@ -3,6 +3,7 @@ import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import {CartService} from '../cart.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +22,7 @@ export class HeaderComponent implements OnInit ,OnDestroy {
     school : new FormControl
   });
   sliderForm="slider_hidden";
-  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService,private router:Router,public cartService:CartService) {
+  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService,private router:Router,public cartService:CartService,public authservice:AuthService) {
 
    }
   fetchData(UserData){
@@ -36,7 +37,7 @@ export class HeaderComponent implements OnInit ,OnDestroy {
     
     console.log(this.cartService.Items);
 
- 
+    this.authservice.signed_in=this.storage.get('user_signed_in');
     if(this.router.url === '/checkout'){
       this.visible_header = false;
     }
@@ -48,5 +49,12 @@ export class HeaderComponent implements OnInit ,OnDestroy {
   ngOnDestroy(){
     this.fetchBooks.reset;
   }
-
+check_mobile_view_sign_in(){
+  if(!this.authservice.signed_in){
+    this.cartService.sign_in_pop_up=true
+  }
+  else{
+    this.router.navigate(['/cart']);
+  }
+}
 }

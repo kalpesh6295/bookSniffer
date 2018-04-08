@@ -210,7 +210,7 @@ app-header{
     
   }
 
-  @media screen and (min-width:320px) and (max-width:370px){
+  @media screen and (min-width:310px) and (max-width:370px){
     .snip1171 {
       min-width: 150px;
       max-width: 150px;

@@ -1,18 +1,21 @@
 import * as firebase from 'firebase';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
-import { Injectable } from "@angular/core";
-
+import { Injectable, Inject } from "@angular/core";
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
 @Injectable()
 export class AuthService {
 
     smessage;
-
-    constructor(private afs:AngularFirestore){}
+  signed_in;
+  recovery_mail_send=false;
+    constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService,private afs:AngularFirestore){}
 
     signin(email:string,password:string){
         firebase.auth().signInWithEmailAndPassword(email,password).then(
             () => {
                 console.log("Successfully Logged In");
+                this.signed_in=true;
+                this.storage.set('user_signed_in',true);
             }
         ).catch(
             () => {console.log("Cannot Log In! Please Regiseter!")}
@@ -26,6 +29,8 @@ export class AuthService {
                     UserPassword : password
                 })
                 console.log("You are now registered as a User.");
+                this.signed_in=true;   
+                this.storage.set('user_signed_in',true);
             }
         ).catch(
             ()=> {
@@ -37,6 +42,9 @@ export class AuthService {
         firebase.auth().sendPasswordResetEmail(email).then(
             ()=>{
                 this.smessage = true;
+                this.signed_in=false;
+                this.storage.set('user_signed_in',false);
+                this.recovery_mail_send=true;
                 console.log("service s msg"+this.smessage);
                 console.log("Check Your Email for Password Resetting mail.");
             }
@@ -48,4 +56,8 @@ export class AuthService {
             }
         )
     }
+    logout(){
+        this.signed_in=false;
+    }
+  
 }

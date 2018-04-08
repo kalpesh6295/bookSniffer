@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CartService } from './cart.service';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { CartService } from './cart.service';
 })
 export class AppComponent {
   title = 'app';
-  constructor(public cartservice:CartService){
+  constructor(public cartservice:CartService, public authservice:AuthService){
 
   }
 }

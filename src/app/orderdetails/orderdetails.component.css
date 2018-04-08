@@ -1,0 +1,146 @@
+  button{margin-left: 30px;margin-bottom: 10px;}
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+  h4{font-size: 16px;}
+  .container .product {
+    width: 70%;
+    height: auto;
+    display: flex;
+    margin: .4em 0;
+    overflow: hidden;
+     box-shadow: 0px 0px 21px 3px rgba(0, 0, 0, 0.11);
+    transition: all .1s ease-in-out;
+     display: flex;
+    margin-left: 15%;
+  }
+  .container .product .img-container {
+    flex: .7;
+    overflow: hidden;
+  }
+  .container .product .img-container img {
+    width: 100%;
+    height: 100%;
+  
+  transition-duration: .5s;
+  }
+  .container .product .img-container img:hover{  transform: scale(1.2);}
+  .container .product .product-info {
+    background: #fff;
+    flex: 3;
+  }
+  .container .product .product-info .product-content {
+    padding: .2em 0 .2em 1em;
+  }
+  .container .product .product-info .product-content h1 {
+    font-size: 1.5em;
+  }
+  .container .product .product-info .product-content p {
+    color: #333333;
+    font-size: .87em;
+    font-weight: bold;
+    width: 90%;
+  }
+  .container .product .product-info .product-content .buttons {
+    padding-top: .4em;
+  }
+  .container .product .product-info .product-content .buttons .button {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px; 
+   padding: .3em .5em;
+    transition: all .1s ease-in-out;
+  }
+  .container .product .product-info .product-content .buttons #price {
+    float: right;
+    color: #222222;
+    margin-right: 70px;
+    font-size: 19px;
+    margin-top: -100px;
+   }
+  .container .product .product-info .product-content .buttons button{height: 45px;  background: #005585; width: 200px; cursor: pointer;
+    box-shadow: rgba(0,0,0,.16) 0px 2px 5px, rgba(0,0,0,.12) 0px 2px 10px; border: none;}
+    .container .product .product-info .product-content .buttons  .order{background: #005585; }
+    .container .product .product-info .product-content .buttons  .cancle{background: #cb202d;}
+  .container .product .product-info .product-content .buttons button:focus{outline: none;}
+  
+  @media screen and (max-width: 700px){
+  button{margin-left: 3px;}
+  .container .product .img-container {
+    flex: 1.2;
+    overflow: hidden;
+  }
+  .container .product {
+    width: 100%;
+     margin-left: 0%;
+      margin: .4em 0;
+        height: auto;
+  
+  }
+  .container .product .product-info .product-content {
+    padding: .2em 0 .2em 1em;
+  }
+  .container .product .product-info .product-content h1 {
+    font-size: .8em;
+  }
+  .container .product .product-info .product-content p {
+    color: #333333;
+    font-size: .6em;
+    font-weight: bold;
+    width: 90%;
+  }
+  .container .product .product-info .product-content .buttons .button {
+    padding: .3em .5em;
+   }
+  .container .product .product-info .product-content .buttons {
+    padding-top: 0em;
+
+  }
+  .container .product .product-info .product-content .buttons button{height: 26px;width: 80px; cursor: pointer;}
+  .container .product .product-info .product-content .buttons  .order{font-size: 10px;background: #005585; }
+  .container .product .product-info .product-content .buttons  .cancle{font-size: 10px;background: #cb202d;}
+  .container .product .product-info .product-content .buttons #price {
+  margin-right: 10px;
+    font-size: 13px;
+    margin-top: -70px;
+   }
+  }
+  
+  @media screen and (min-width: 330px) and (max-width: 400px) {
+      .container .product .product-info .product-content .buttons #price {
+  margin-right: 10px;
+    font-size: 14px;
+    margin-top: -70px;
+   }
+   button{margin-left: 4px;}
+   .container .product .product-info .product-content .buttons button{width: 100px;height: 30px;}
+  }
+  @media screen and (min-width: 400px) and (max-width: 700px) {
+  .container .product .product-info .product-content .buttons button{width: 120px;}
+   .container .product .product-info .product-content .buttons #price {
+    margin-right: 10px;
+      font-size: 14px;
+      margin-top: -70px;
+      width: 70px;
+     }
+  }
+  @media screen and (min-width: 700px) and (max-width: 1000px) {
+    .container .product {
+    width: 100%;
+    margin-left: 0%;
+  }
+  .container .product .product-info .product-content .buttons #price {
+    margin-right: 10px;
+      font-size: 17px;
+      margin-top: -90px;
+      width: 70px;
+     }
+  }
+  
+  @media screen and (min-width: 1000px) and (max-width: 1400px) {
+    .container .product {
+    width: 80%;
+    margin-left: 10%;
+  }
+  }

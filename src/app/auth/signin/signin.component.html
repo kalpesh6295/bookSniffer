@@ -1,30 +1,53 @@
-<div class="sign_in_container"(click)="cartService.main_container_click=true" (click)="check_click()">
-<div class="wrapper " (click)="cartService.wrapper_click=true" >
-  <div class="container">  
-    <div id="contact">
-      <h3>Sign In</h3>
-      <h4>Sign In for better Experince</h4>
-      <!-- <fieldset>
-        <input placeholder="Your name" type="text" tabindex="1" required autofocus>
-      </fieldset> -->
-      <fieldset>
-        <input placeholder="Your Email Address" type="email" tabindex="1" required>
-      </fieldset>
-      <fieldset>
-        <input placeholder="Your Password" type="password" tabindex="2" required>
-      </fieldset>
-      <fieldset>
-        <!-- <input placeholder="Your Web Site starts with http://" type="url" tabindex="4" required>
-      </fieldset>
-      <fieldset>
-        <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
-      </fieldset>
-      <fieldset> -->
-        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-      </fieldset>
+ <div class="sign_in_container"(click)="cartService.main_container_click=true" (click)="check_click()">
+<!-- <div class="wrapper " >  -->
+ 
+  <div class="login-page" (click)="cartService.wrapper_click=true" >
+    <div class="form">
+      <form class="register-form" [formGroup]="signUpForm" (ngSubmit)="signup(signUpForm.value)" [ngClass]="{'active':signup_show, 'inactive':!signup_show}" >
+        <div class="group">
+          <input type="text" formControlName = "username" required/>
+          <span class="bar"></span>
+          <label>Username</label>
+        </div>
+        <div class="group">
+          <input type="password" formControlName = "password" required/>
+          <span class="bar"></span>
+          <label>Password</label>
+        </div>
+        <div class="group">
+          <input type="text" formControlName = "email" required/>
+          <span class="bar"></span>
+          <label>Emaiil</label>
+        </div>
+        <button type="submit">create</button>
+        <p class="message">Already registered? <a class="signIn" style="cursor: pointer;" (click)="ShowSignin()">Sign In</a></p>
+      </form>
+      <form class="login-form" [formGroup]="signInForm" (ngSubmit)="signin(signInForm.value)" [ngClass]="{'active':signin_show,'inactive':!signin_show}">
+        <div class="group">
+          <input type="text" formControlName = "email"  required/>
+          <span class="bar"></span>
+          <label>Emaiil</label>
+        </div>
+        <div class="group">
+          <input type="password" formControlName = "password" required/>
+          <span class="bar"></span>
+          <label>Password</label>
+        </div>
+      
+        <button type="submit">login</button>
+        <p class="message"><a class="reoverPassword" (click)="ShowRecover()" style="cursor: pointer;">Recover my password</a></p>
+        <p class="message">Not registered? <a class="createAccount" (click)="ShowSignup()" style="cursor: pointer;">Create an account</a></p>
+      </form>
+      <form class="reset-form" [formGroup]="recoverForm" (ngSubmit)="recover(recoverForm.value)" [ngClass]="{'active':recover_show,'inactive':!recover_show}">
+        <div class="group">
+          <input type="text" formControlName = "email" required/>
+          <span class="bar"></span>
+          <label>Emaiil</label>
+        </div>
+        <button type="submit">Reset password</button>
+        <p class="message">Back to <a class="backToLogin" (click)="ShowSignin()" style="cursor: pointer;">Sign in</a></p>
+      </form>
     </div>
-   
-    
   </div>
   </div>
-</div>
+<!-- </div> -->
