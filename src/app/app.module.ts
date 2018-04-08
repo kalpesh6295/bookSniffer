@@ -24,6 +24,11 @@ import { AuthService } from "./auth/auth.service";
 import { ForgetComponent } from "./auth/forget/forget.component";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
+import { OrderComponent } from './order/order.component';
+import { ProfileComponent } from './side-menu/profile/profile.component';
+import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 
 const config = {
   apiKey: "AIzaSyDoV_rdaRnkk-myi6BpKpIbqkW7DGRo7Vs",
@@ -39,7 +44,9 @@ const appRoutes:Routes=[
   {path: 'cart', component: CartComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'checkout', component: CheckoutComponent},
-  
+  {path: 'order', component: OrderComponent},
+  {path: 'profile', component: ProfileComponent},
+  {path: 'orderdetails', component: OrderdetailsComponent},
   {path: ':medium/:board/:class', component: ProductComponent},
   {path : 'reset',component:ForgetComponent},
   {path:'**', redirectTo:''}
@@ -58,7 +65,12 @@ const appRoutes:Routes=[
     SignUpComponent,
     ForgetComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ContactusComponent,
+    SideMenuComponent,
+    OrderComponent,
+    ProfileComponent,
+    OrderdetailsComponent
   ],
   imports: [
     HttpClientModule,

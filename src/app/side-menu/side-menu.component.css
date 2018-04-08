@@ -1,0 +1,30 @@
+
+    .container{width: 100%;display: table;}
+    .side-menu{width: 20%;display: table-cell;margin-top: 60px;position: absolute; padding-left: 15px; margin-left: 80px;}
+    .order{display: table-cell;width: 70%;}
+    .menu-tab{width: 80%;padding-left: 40px;}
+    .order-tab{border-bottom: solid 1px #F1F1F1;}
+    .profile-tab{}
+    h3{font-size: 1.3em;}
+    h2{font-size: 1.5em;}
+    a{text-decoration: none;color: #77787b;font-family: "montserrat";}
+    @media screen and (max-width: 700px){
+        .side-menu{width: 0%;display:block;margin-top: 0px;position: absolute; padding-left:0px; margin-left: 0px; display: none;}
+        .order{display: block;width: 100%;}
+        
+    }
+    @media screen and (min-width: 700px) and (max-width: 1000px){
+      
+        .side-menu{width: 29%;display: table-cell;margin-top: 30px;position: absolute; padding-left: 15px; margin-left: 15px;}
+        .order-id{color: #005688;width: 10%; padding-right: 4px;}
+        .menu-tab{width: 80%;padding-left: 10px;}
+        h3{font-size: 1em;}
+        .side-menu h2{margin-left: -20px;}
+    
+    }
+    
+    @media screen and (min-width: 1000px) and (max-width: 1400px){
+        .side-menu{width: 23%;display: table-cell;margin-top: 60px;position: absolute; padding-left: 15px; margin-left: 20px;}
+        .menu-tab{padding-left: 20px;width: 100%;}
+    }
+    
