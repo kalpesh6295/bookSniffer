@@ -36,12 +36,20 @@ export class CheckoutComponent implements OnInit {
 
     }).then(()=>{
       console.log('data successfully written.');
-      this.router.navigate(['']);
+      
 
     });
+    this.afs.collection('users').doc(checkoutDetails.email).set({
+      address : checkoutDetails.address1 + " "+checkoutDetails.address2+','+checkoutDetails.city+checkoutDetails.postcode,
+      order: this.finalcart
+    }).then(
+      ()=>{
+        this.router.navigate(['']);
+      }
+    )
     console.log(this.checkoutcontent.valid);
     }
-    
+   
   }
 
   checknumber(control:FormControl):{ [s:string] : boolean } {
