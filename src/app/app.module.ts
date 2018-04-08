@@ -27,7 +27,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { OrderComponent } from './order/order.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './side-menu/profile/profile.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 
 const config = {

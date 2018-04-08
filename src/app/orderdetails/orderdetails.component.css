@@ -1,7 +1,14 @@
-  button{margin-left: 30px;margin-bottom: 10px;}
+ .page-header{display: flex;justify-content: center;margin-left: 15%; border-bottom: 1px solid #f1f1f1;margin-top:10px;}
+ .date-of-order{margin-right: 120px;}
+ .shipping-address{margin-left: 120px;}
+ h5{font-size: 14px;}
+ p{font-size: 14px;}
+ .user-address{margin-top: -15px;}
+ button{margin-left: 30px;margin-bottom: 10px;}
   .container {
     width: 100%;
     height: 100%;
+    margin-top: 30px;
   }
   h4{font-size: 16px;}
   .container .product {
@@ -9,6 +16,7 @@
     height: auto;
     display: flex;
     margin: .4em 0;
+    
     overflow: hidden;
      box-shadow: 0px 0px 21px 3px rgba(0, 0, 0, 0.11);
     transition: all .1s ease-in-out;
@@ -64,9 +72,20 @@
     .container .product .product-info .product-content .buttons  .order{background: #005585; }
     .container .product .product-info .product-content .buttons  .cancle{background: #cb202d;}
   .container .product .product-info .product-content .buttons button:focus{outline: none;}
+  .product-total{margin-top: 50px; width: 20%; float: right;margin-right: 25vw;margin-bottom: 30px;}
+  .sub-total,.Order-Total,.Delivery-Charges{display: flex;line-height: 2em; padding: 0px 10px 5px 0px;}
+  .title{width: 80%;}
+ .price{margin-left: 4vw;}
+  .Order-Total,.Delivery-Charges{border-bottom: 1px solid gray;}
   
   @media screen and (max-width: 700px){
   button{margin-left: 3px;}
+  .page-header{display: flex;justify-content: center;margin-left: 0%; border-bottom: 1px solid #f1f1f1;margin-top:10px;}
+  .date-of-order{margin-right: 30px;width: 33%;margin-left: 10px;}
+  .order-total{width: 33%;}
+  h5{font-size: 10px;}
+  p{font-size: 10px;}
+  .shipping-address{margin-left: 30px;width: 33%;}
   .container .product .img-container {
     flex: 1.2;
     overflow: hidden;
@@ -105,6 +124,7 @@
     font-size: 13px;
     margin-top: -70px;
    }
+   .product-total{margin-top: 50px; width: 100%; float: none;margin-right: 0vw;margin-bottom: 30px;}
   }
   
   @media screen and (min-width: 330px) and (max-width: 400px) {
@@ -126,6 +146,12 @@
      }
   }
   @media screen and (min-width: 700px) and (max-width: 1000px) {
+    .page-header{display: flex;justify-content: center;margin-left: 20%;}
+    .date-of-order{margin-right: 30px;width: 33%;margin-left: 10px;}
+    .order-total{width: 33%;}
+    h5{font-size: 13px;}
+    p{font-size: 13px;}
+    .shipping-address{margin-left: 30px;width: 33%;}
     .container .product {
     width: 100%;
     margin-left: 0%;
@@ -136,6 +162,7 @@
       margin-top: -90px;
       width: 70px;
      }
+     .product-total{margin-top: 50px; width: 50%; float:right;margin-right: 7vw;margin-bottom: 30px;}
   }
   
   @media screen and (min-width: 1000px) and (max-width: 1400px) {
