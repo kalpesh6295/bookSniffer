@@ -124,7 +124,7 @@
     font-size: 13px;
     margin-top: -70px;
    }
-   .product-total{margin-top: 50px; width: 100%; float: none;margin-right: 0vw;margin-bottom: 30px;}
+   .product-total{margin-top: 50px; width: 100%; float: none;margin-right: 0vw;margin-bottom: 30px;padding: 0px 20px 0px 20px;}
   }
   
   @media screen and (min-width: 330px) and (max-width: 400px) {
@@ -170,4 +170,6 @@
     width: 80%;
     margin-left: 10%;
   }
+  .container .product .product-info .product-content .buttons #price{margin-top: -90px;}
+  .product-total{margin-top: 50px; width: 30%; float: right;margin-right: 15vw;margin-bottom: 30px;}
   }

@@ -16,15 +16,16 @@
     a{text-decoration: none;color: #77787b;font-family: "montserrat";}
     @media screen and (max-width: 700px){
         
-        .order{display: block;width: 100%;margin-left: 0vw;}
-        .product{width: 100%}
+        .order{display: block;width: 100%;margin-left: 0vw;font-size: 13px;padding: 0px 10px 0px 10px;}
+        .product{width: 100%;padding: 1px 1px 1px 8px;}
         .order-id{color: #005688;width: 10%; padding-right: 4px;}
-        ul{padding-right: 0vw;}
+        ul{padding-right: 0vw;margin-top: -5px;}
         .order-name{width: 40%;}
         .order-total{width: 18%;margin-left: 40px;padding-right: 2vw;}
         .order-status-msg{display: none; width: 0px;}
+        .order-status{font-size: 13px;}
         .product-footer{ background-color: #ffffff; display:inline-flex;justify-content: center;width: 65%;}
-        .product-footer button{ position:relative;height: 28px; width: 140px; border: none;margin-top: -7px;}
+        .product-footer button{height: 28px; width: 40%; border: none;margin-top: -7px;margin-left: 50px;}
         .product{border-bottom: 1px solid #f1f1f1;}
     }
     @media screen and (min-width: 700px) and (max-width: 1000px){
