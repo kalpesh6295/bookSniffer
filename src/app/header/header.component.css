@@ -1,6 +1,6 @@
 .mobile-header{visibility: hidden;}
 .header-fixed {  
-	background: linear-gradient(to right#7199c7,#28babe, #38b2c0 , #7199c7 );  
+	background: linear-gradient(to right,#7199c7,#28babe, #38b2c0 , #7199c7 );  
    box-shadow:0 1px 1px #ccc;
 	padding: 20px 40px;
 	height: 80px;

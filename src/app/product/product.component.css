@@ -20,6 +20,7 @@ app-header{
     margin-left: calc(47% - 310px);  
     min-height: calc(100vh - 151px);
   }
+  
 }
 @media screen and (max-width:648px){
   .book_data{
@@ -31,6 +32,8 @@ app-header{
     width: 100vw;
     
   }
+  .snip1171 p {
+    font-size: 0.6em;}
   
 }
 @media screen and (min-width:988px) and (max-width:1024px){
@@ -107,11 +110,12 @@ app-header{
     top: 0;
   }
   .snip1171 p {
-    font-size: 0.6em;
-    font-weight: 500;
+    font-size: 1em;
+    font-weight:400;
     text-align: center;
     margin: 0;
     line-height: 1.6em;
+    font-family: High Tower Text;
   }
   .snip1171 .price {
     position: absolute;
@@ -284,3 +288,8 @@ app-header{
       
     }
   }
+  @media screen and (max-width:700px){
+    .snip1171 p {
+      font-size: 0.7em;
+    font-family: High Tower Text;}
+    }
