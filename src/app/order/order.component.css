@@ -1,6 +1,6 @@
     .order-heading{display: flex;justify-content: center;}
     .order{width: 70%; margin-left: 30vw;}
-    .product{margin-top: 5%; width: 80%;}
+    .product{margin-top: 5%; width: 80%;font-family: 'Bookman';}
     .order-tab{border-bottom: solid 1px #F1F1F1;}
     .date{padding-bottom: 15px;font-size: 12px;}
     .order-details{display: flex;}

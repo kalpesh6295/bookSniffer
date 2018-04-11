@@ -13,6 +13,7 @@ body {
   margin-bottom: 10px;
   margin-left: 0;
   margin-right: 0;
+  font-family: 'Trebuchet MS'
 }
 .container .button[type="submit"] {
   display: inline-block;
@@ -34,6 +35,8 @@ body {
   border-color: #006699;
   color: #fff;
   cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 .container .input-text {
   border: 1px solid #e5e5e5;
@@ -45,7 +48,7 @@ body {
   padding: .5rem .75rem;
   font-size: 1rem;
   line-height: 1.25;
- 
+  font-family: 'Bookman';
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 .container .input-text:focus {
@@ -135,7 +138,7 @@ body {
 }
 
 input.ng-touched.ng-invalid  {
-  outline: 1px solid #006699;;
+  outline: 1.5px solid red;
 }
 
 @media screen and (max-width: 600px) {
