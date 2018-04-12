@@ -1,0 +1,40 @@
+[debug] [2018-04-12T07:42:24.060Z] ----------------------------------------------------------------------
+[debug] [2018-04-12T07:42:24.062Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only hosting
+[debug] [2018-04-12T07:42:24.062Z] CLI Version:   3.16.0
+[debug] [2018-04-12T07:42:24.062Z] Platform:      darwin
+[debug] [2018-04-12T07:42:24.062Z] Node Version:  v8.9.4
+[debug] [2018-04-12T07:42:24.063Z] Time:          Thu Apr 12 2018 13:12:24 GMT+0530 (IST)
+[debug] [2018-04-12T07:42:24.063Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-12T07:42:24.089Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-12T07:42:24.090Z] > authorizing via signed-in user
+[debug] [2018-04-12T07:42:24.092Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-12T07:42:24.092Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/ZopR2QR5R_KLurEGpQcybO-a8NLZj87q4GVvelxNOHGjr4utI4PKkS4bExinv5YL',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Apr 12 2018 13:12:24 GMT+0530 (IST)
+[debug] [2018-04-12T07:42:24.987Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-12T07:42:25.015Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/edbirdworkshop  
+  
+ Thu Apr 12 2018 13:12:25 GMT+0530 (IST)
+[debug] [2018-04-12T07:42:27.126Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-12T07:42:27.128Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/edbirdworkshop/tokens  
+  
+ Thu Apr 12 2018 13:12:27 GMT+0530 (IST)
+[debug] [2018-04-12T07:42:30.708Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'edbirdworkshop'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing dist directory for upload...
+[debug] [2018-04-12T07:42:35.517Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/edbirdworkshop/uploads/-L9snZesSTv9y5dhQf3k?fileCount=50&message=  
+  
+ Thu Apr 12 2018 13:12:35 GMT+0530 (IST)
+[debug] [2018-04-12T09:52:50.962Z] Error: write EPIPE
+    at _errnoException (util.js:1022:11)
+    at WriteWrap.afterWrite [as oncomplete] (net.js:867:14)
+[error] 
+[error] Error: Server Error. write EPIPE
