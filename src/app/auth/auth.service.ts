@@ -1,7 +1,8 @@
-import * as firebase from 'firebase';
+mport * as firebase from 'firebase';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Injectable, Inject } from "@angular/core";
 import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+<<<<<<< HEAD
 export interface userinfo{
     username?:string,
     usermail?:string
@@ -24,6 +25,19 @@ email;
 username;
 smessage;
 signed_in;
+=======
+export interface userdetails {
+    UserMail?: String,
+    UserName?: String
+
+}
+@Injectable()
+export class AuthService {
+
+    smessage;
+  signed_in;
+  userdetails:userdetails;
+>>>>>>> 6d05c825ad565dae6beaec9a8c5b56175c4bbec9
   recovery_mail_send=false;
     constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService,private afs:AngularFirestore){}
 
@@ -33,6 +47,7 @@ signed_in;
                 console.log("Successfully Logged In");
                 this.signed_in=true;
                 this.storage.set('user_signed_in',true);
+<<<<<<< HEAD
 
                 firebase.auth().onAuthStateChanged(user => {
                     if(user) {
@@ -55,17 +70,27 @@ signed_in;
                     }
                 });
 
+=======
+                this.afs.collection('UserDetails').doc(email).valueChanges().subscribe(
+                 userdetails =>{
+                    this.userdetails = userdetails;
+                 }
+              
+                )
+                this.storage.set('userdetails',this.userdetails);
+                
+>>>>>>> 6d05c825ad565dae6beaec9a8c5b56175c4bbec9
             }
         ).catch(
             () => {console.log("Cannot Log In! Please Regiseter!")}
         )
     }
-    signup(email:string,password:string){
-        firebase.auth().createUserWithEmailAndPassword(email,password).then(
+    signup(userdata){
+        firebase.auth().createUserWithEmailAndPassword(userdata.email,userdata.password).then(
             () =>  {
-                this.afs.collection('UserDetails').doc(email+" "+password).set({
-                    UserMail : email,
-                    UserPassword : password
+                this.afs.collection('UserDetails').doc(userdata.email).set({
+                    UserMail : userdata.email,
+                    UserName : userdata.username
                 })
                 console.log("You are now registered as a User.");
                 this.signed_in=true;   
@@ -99,4 +124,5 @@ signed_in;
         this.signed_in=false;
     }
   
-}
+    }
+   
