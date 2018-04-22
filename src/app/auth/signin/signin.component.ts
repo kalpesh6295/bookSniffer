@@ -49,7 +49,7 @@ ShowRecover(){
   });
 
   signup(userform){
-   this.authservice.signup(userform);
+   this.authservice.signup(userform.email,userform.password);
     console.log("Done!");
   }
   recoverForm = new FormGroup({

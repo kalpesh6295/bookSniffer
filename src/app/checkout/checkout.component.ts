@@ -6,6 +6,7 @@ import {CartService} from '../cart.service';
 import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Router } from '@angular/router';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-checkout',
@@ -44,13 +45,34 @@ export class CheckoutComponent implements OnInit {
       order: this.finalcart
     }).then(
       ()=>{
-        this.router.navigate(['']);
+        // this.router.navigate(['']);
       }
     )
     console.log(this.checkoutcontent.valid);
     }
    
+    this.afs.collection("UserDetails").doc(firebase.auth().currentUser.email).collection('order').add({
+      // name: "Tokyo",
+      // country: "Japan"
+      name:checkoutDetails.fname + " "+ checkoutDetails.lname,
+      address : checkoutDetails.address1 + " "+checkoutDetails.address2,
+      city:checkoutDetails.city,
+      postcode:checkoutDetails.postcode,
+      phone:checkoutDetails.mobile,
+      email:checkoutDetails.email,
+      order:this.finalcart,
+      date:new Date()
+  })
+  .then(function(docRef) {
+      console.log("Document written with ID: ", docRef.id);
+  })
+  .catch(function(error) {
+      console.error("Error adding document: ", error);
+  });
+  
   }
+
+
 
   checknumber(control:FormControl):{ [s:string] : boolean } {
     if(control.value){
@@ -86,6 +108,7 @@ export class CheckoutComponent implements OnInit {
 
 
   ngOnInit() {
+    console.log('Date is '+new Date());
     this.checkoutcontent = new FormGroup({
       fname : new FormControl(null,Validators.required),
       lname : new FormControl(null,Validators.required),

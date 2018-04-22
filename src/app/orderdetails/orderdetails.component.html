@@ -2,28 +2,29 @@
 <div class="page-header">
   <div class="date-of-order">
     <h5>DATE OF ORDER</h5>
-    <p>27 March 2018</p>
+    <p>{{clicked_item.date | date:'medium'}}</p>
   </div>
   <div class="order-total">
     <h5>ORDER TOTAL</h5>
-    <p>200</p>
+    <p>{{this.order_total}}</p>
   </div>
   <div class="shipping-address">
     <h5>SHIPPING ADDRESS</h5>
-    <p>User name</p>
-    <p class="user-address">Address address address address</p>
-    <p>Moible:12345678</p>
+    <p>{{clicked_item.name}}</p>
+    <p class="user-address">{{clicked_item.address}}</p>
+    <p>Mobile:{{clicked_item.phone}}</p>
   </div>
 </div>
-<div class="container">
+<div *ngFor = "let eachbook of clicked_item.order" class="container">
+
     <div class="product">
      <div class="img-container">
-       <img src="images/book20.jpg">
+       <img [src]="eachbook.image">
      </div>
      <div class="product-info">
        <div class="product-content">
-         <h1>Book Name</h1>
-         <p>Book Discription Book Discription Book Discription Book Discription Book Discription Book Discription Book Discription Book Discription  </p>
+         <h1>{{eachbook.name | uppercase}}</h1>
+         <p>{{eachbook.description}}</p>
          <h4>Order Status</h4>
          <div class="buttons">
            <button class="button cancle" >Cancel</button>
@@ -33,40 +34,7 @@
        </div>
      </div>
    </div>
-   <div class="product">
-    <div class="img-container">
-      <img src="images/book20.jpg">
-    </div>
-    <div class="product-info">
-      <div class="product-content">
-        <h1>Book Name</h1>
-        <p>Book Discription Book Discription Book Discription Book Discription Book Discription Book Discription Book Discription Book Discription  </p>
-        <h4>Order Status</h4>
-        <div class="buttons">
-          <button class="button cancle" >Cancel</button>
-        <button class="button order" >Return Order</button>
-          <span class="button" id="price"><span >Price:</span>59</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="product">
-    <div class="img-container">
-      <img src="images/book20.jpg">
-    </div>
-    <div class="product-info">
-      <div class="product-content">
-        <h1>Book Name</h1>
-        <p>Book Discription Book Discription Book Discription Book Discription Book Discription Book Discription Book Discription Book Discription  </p>
-        <h4>Order Status</h4>
-        <div class="buttons">
-          <button class="button cancle" >Cancel</button>
-        <button class="button order" >Return Order</button>
-          <span class="button" id="price"><span >Price:</span>59</span>
-        </div>
-      </div>
-    </div>
-  </div>
+
    </div>
 <div class="product-total">
   <div class="sub-total">
@@ -74,15 +42,15 @@
       <span>SUB TOTAL</span>
     </div>
     <div class="price">
-      42434
+      {{order_total}}
     </div>
   </div>
   <div class="Delivery-Charges">
     <div class="title">
-      <span>DElivery Charges</span>
+      <span>Delivery Charges</span>
     </div>
     <div class="price">
-      42434
+      {{delivery_charge}}
     </div>
   </div>
   <div class="Order-Total">
@@ -90,7 +58,7 @@
       <span>Total</span>
     </div>
     <div class="price">
-      42434
+      {{order_total+delivery_charge}}
     </div>
   </div>
 </div>
