@@ -11,7 +11,7 @@
   margin: 0px auto;
 }
 
-label{ font-family: 'Bookman';}
+label{ font-family: 'monotype corsiva';}
 
 .wrapper {
   z-index: 10001;
@@ -23,7 +23,7 @@ label{ font-family: 'Bookman';}
 
 * {
   box-sizing: border-box;
-  font-family: 'Bookman';
+  font-family: 'Courier New';
 }
 .login-page {
   width: 360px;

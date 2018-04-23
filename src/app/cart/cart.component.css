@@ -11,7 +11,7 @@ html a {
 body {
     background-color: #f1f3f6;
   color: #666;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'monotype corsiva';
   font-size: 62.5%;
   margin: 0 auto;
 }
@@ -34,6 +34,7 @@ p {
 h1 {
   font-size: 1rem;
   font-weight: normal;
+  font-family: '"Lucida Console", Monaco, monospace';
   margin: 0;
   padding: 0;
   width: 130%;
@@ -150,7 +151,7 @@ label {
 }
 
 .basket-labels {
-  font-weight: 900;
+  font-weight: 500;
   border-bottom: 1px solid #ccc;
 
 }
@@ -198,9 +199,9 @@ li.subtotal:before {
 
 .remove button {
   background-color: transparent;
-  color: #777;
+  color:#333333;
   float: none;
-  font-weight: 900;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -268,7 +269,7 @@ aside {
   color: #666;
   font-size: 0.875rem;
   text-align: center;
-  font-weight: 900;
+  font-weight: 500;
 }
 
 .summary-subtotal,
@@ -321,7 +322,7 @@ aside {
 }
 
 .total-title {
-  font-weight: bold;
+  font-weight: 500;
   text-transform: uppercase;
 }
 

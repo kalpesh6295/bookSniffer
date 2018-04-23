@@ -6,7 +6,6 @@
 	height: 80px;
 	color: #ffffff;
 	box-sizing: border-box;
-    top:-100px;
     width: 100vw;
 -webkit-transition:top 0.3s;
 	transition:top 0.3s;
@@ -46,8 +45,9 @@
 }
 
 .header-fixed .header-limiter nav {
-	font:16px 'Palatino';
+	font: 20px 'monotype corsiva';
 	line-height: 40px;
+	letter-spacing: 2px;
 	float: right;
 }
 
