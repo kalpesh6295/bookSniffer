@@ -74,5 +74,4 @@ export class AuthService {
         this.signed_in=false;
     }
   
-    }
-   
+} 
