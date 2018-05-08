@@ -19,6 +19,7 @@ export class CheckoutComponent implements OnInit {
 
   finalcart = [];
   totalprice = 0;
+  per_ordertotal:number=0;
 
   constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService,private afs:AngularFirestore,private router:Router) { }
 
@@ -35,49 +36,66 @@ export class CheckoutComponent implements OnInit {
       email:checkoutDetails.email,
       order:this.finalcart
 
-    }).then(()=>{
+    }).then( ()=>{
       console.log('data successfully written.');
       
+      for(var i = 0;i<this.finalcart.length;i++){
+        this.per_ordertotal += this.finalcart[i].price*this.finalcart[i].amount;
+        console.log('this per order total is'+this.per_ordertotal);
+       }
+
+       this.afs.collection('users').doc(checkoutDetails.email).set({
+        address : checkoutDetails.address1 + " "+checkoutDetails.address2+','+checkoutDetails.city+checkoutDetails.postcode,
+        order: this.finalcart
+      }).then(
+        ()=>{
+          // this.router.navigate(['']);
+        }
+      )
+      console.log(this.checkoutcontent.valid);
+
+      this.afs.collection("UserDetails").doc(firebase.auth().currentUser.email).collection('order').add({
+        // name: "Tokyo",
+        // country: "Japan"
+        name:checkoutDetails.fname + " "+ checkoutDetails.lname,
+        address : checkoutDetails.address1 + " "+checkoutDetails.address2,
+        city:checkoutDetails.city,
+        postcode:checkoutDetails.postcode,
+        phone:checkoutDetails.mobile,
+        email:checkoutDetails.email,
+        order:this.finalcart,
+        date:new Date(),
+        total:this.per_ordertotal
+    })
+    .then((docRef)=> {
+      console.log("Document written with ID: ", docRef.id);
+      // this.storage.set('cart',[]);
+      this.router.navigate(['order']);
+      this.storage.set('cart',[])
+      this.afs.collection('UserDetails').doc(this.storage.get('current_user')).update({
+        cart : this.storage.get('cart')
+      });
+    })
+    .catch(function(error) {
+      console.error("Error adding document: ", error);
+    });
+    
+    this.finalcart = [];
 
     });
-    this.afs.collection('users').doc(checkoutDetails.email).set({
-      address : checkoutDetails.address1 + " "+checkoutDetails.address2+','+checkoutDetails.city+checkoutDetails.postcode,
-      order: this.finalcart
-    }).then(
-      ()=>{
-        // this.router.navigate(['']);
-      }
-    )
-    console.log(this.checkoutcontent.valid);
+
+
     }
    
-    this.afs.collection("UserDetails").doc(firebase.auth().currentUser.email).collection('order').add({
-      // name: "Tokyo",
-      // country: "Japan"
-      name:checkoutDetails.fname + " "+ checkoutDetails.lname,
-      address : checkoutDetails.address1 + " "+checkoutDetails.address2,
-      city:checkoutDetails.city,
-      postcode:checkoutDetails.postcode,
-      phone:checkoutDetails.mobile,
-      email:checkoutDetails.email,
-      order:this.finalcart,
-      date:new Date()
-  })
-  .then(function(docRef) {
-      console.log("Document written with ID: ", docRef.id);
-  })
-  .catch(function(error) {
-      console.error("Error adding document: ", error);
-  });
-  
-  }
+    
+}
 
 
 
-  checknumber(control:FormControl):{ [s:string] : boolean } {
-    if(control.value){
-      var chars = control.value.toString().split('');
-      console.log("Invalid number if ke andar");
+checknumber(control:FormControl):{ [s:string] : boolean } {
+  if(control.value){
+    var chars = control.value.toString().split('');
+    console.log("Invalid number if ke andar");
       for(var i =0; i<chars.length;i++){
         console.log("Invalid number for ke andar");
         console.log(chars);
@@ -108,6 +126,8 @@ export class CheckoutComponent implements OnInit {
 
 
   ngOnInit() {
+    if(this.storage.get('cart').length){
+      // this.router.navigate(['cart']);
     console.log('Date is '+new Date());
     this.checkoutcontent = new FormGroup({
       fname : new FormControl(null,Validators.required),
@@ -116,7 +136,7 @@ export class CheckoutComponent implements OnInit {
       address2 : new FormControl(null),
       city : new FormControl(null,Validators.required),
       postcode : new FormControl(null,Validators.required),
-      mobile : new FormControl(null,[Validators.required,this.checkmobile,this.checknumber]),
+      mobile : new FormControl(null,[Validators.required,this.checkmobile]),
       email: new FormControl(null,[Validators.required,Validators.email])
     });
     // console.log("Hey i am in cart");
@@ -130,5 +150,10 @@ export class CheckoutComponent implements OnInit {
     // console.log(this.checkoutcontent)
 console.log(this.checkmobile(new FormControl(861917248)));
   }
-
+  else{
+    this.router.navigate(['']);
+    // var route = this.router.url;
+    // console.log(route);
+  }
+}
 }

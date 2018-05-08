@@ -1,6 +1,6 @@
-    .order-heading{display: flex; justify-content: center;width: 100%;}
+    .order-heading{display: flex;justify-content: center;}
     .order{width: 70%; margin-left: 30vw;}
-    .product{margin-top: 5%; width: 80%;font-family: 'monotype corsiva';}
+    .product{margin-top: 5%; width: 80%;font-family: 'Bookman';}
     .order-tab{border-bottom: solid 1px #F1F1F1;}
     .date{padding-bottom: 15px;font-size: 12px;}
     .order-details{display: flex;}
@@ -14,11 +14,10 @@
     .product-footer button{ position:absolute; margin-left: 40.5vw;height: 30px; width: 170px; border: none; background-color: #005688; color: #ffffff; text-transform: uppercase; font-weight: 600;cursor: pointer;}
     .order-status-msg p{margin-top: 0px; padding-left: 10px; font-weight: 600;color: #005688; }
     a{text-decoration: none;color: #77787b;font-family: "montserrat";}
-    h1{font-family: 'monotype corsiva';font-weight: 900;}
     @media screen and (max-width: 700px){
-        h1{font-size: 1.5em;font-family: 'monotype corsiva';font-weight: 900;}
+        
         .order{display: block;width: 100%;margin-left: 0vw;font-size: 13px;padding: 0px 10px 0px 10px;}
-        .product{width: 100%;padding: 1px 10px 1px 8px;}
+        .product{width: 100%;padding: 1px 1px 1px 8px;}
         .order-id{color: #005688;width: 10%; padding-right: 4px;}
         ul{padding-right: 0vw;margin-top: -5px;}
         .order-name{width: 40%;}

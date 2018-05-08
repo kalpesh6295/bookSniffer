@@ -1,3 +1,7 @@
+@charset "utf-8";
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+
 html,
 html a {
   -webkit-font-smoothing: antialiased;
@@ -7,7 +11,7 @@ html a {
 body {
     background-color: #f1f3f6;
   color: #666;
-  font-family: 'monotype corsiva';
+  font-family: 'Open Sans', sans-serif;
   font-size: 62.5%;
   margin: 0 auto;
 }
@@ -30,7 +34,6 @@ p {
 h1 {
   font-size: 1rem;
   font-weight: normal;
-  font-family: '"Lucida Console", Monaco, monospace';
   margin: 0;
   padding: 0;
   width: 130%;
@@ -147,7 +150,7 @@ label {
 }
 
 .basket-labels {
-  font-weight: 500;
+  font-weight: 900;
   border-bottom: 1px solid #ccc;
 
 }
@@ -195,9 +198,9 @@ li.subtotal:before {
 
 .remove button {
   background-color: transparent;
-  color:#333333;
+  color: #777;
   float: none;
-  font-weight: 600;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -265,7 +268,7 @@ aside {
   color: #666;
   font-size: 0.875rem;
   text-align: center;
-  font-weight: 500;
+  font-weight: 900;
 }
 
 .summary-subtotal,
@@ -318,7 +321,7 @@ aside {
 }
 
 .total-title {
-  font-weight: 500;
+  font-weight: bold;
   text-transform: uppercase;
 }
 

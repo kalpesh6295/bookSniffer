@@ -41,6 +41,7 @@ ShowRecover(){
   signin(userform){
    this.authservice.signin(userform.email,userform.password);
     console.log("Done!");
+    
   }
   signUpForm = new FormGroup({
     email : new FormControl,
@@ -49,12 +50,11 @@ ShowRecover(){
   });
 
   signup(userform){
-   this.authservice.signup(userform);
+   this.authservice.signup(userform.email,userform.password);
     console.log("Done!");
   }
   recoverForm = new FormGroup({
     email : new FormControl,
-   
   });
 
   recover(userform){

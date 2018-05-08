@@ -20,7 +20,7 @@ export class ProductComponent implements OnInit,OnDestroy {
  list;
  subjects:subject[] 
 subjectData:Observable<subject[]>;
-cart=[];
+cart:any[]=[];
 subscription;
 //  subjects:subject[];
   constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService,public afs: AngularFirestore,private router: Router,public cartService:CartService) {
@@ -40,19 +40,30 @@ subscription;
 //  add to cart method 
  
   addToCart(name,description,image,price){
+    this.cart = this.storage.get('cart');
 var found=0;
+console.log(this.cart)
+if(this.cart){
 for (var i=0; i < this.cart.length; i++) {
 
-  if (this.cart[i].description === description) {
-     this.cart[i].amount=this.cart[i].amount+1;
-     this.storage.set('cart',this.cart);
-     found=1;
+    if (this.cart[i].description === description) {
+      this.cart[i].amount=this.cart[i].amount+1;
+      this.storage.set('cart',this.cart);
+      found=1;
       break;
+    }
+
   }
+
+  if(found==0){
+    this.cart.push({name:name,description:description,image:image,price:price,amount:1});
+    this.storage.set('cart',this.cart);
   }
-if(found==0){
-  this.cart.push({name:name,description:description,image:image,price:price,amount:1});
-  this.storage.set('cart',this.cart);
+}
+else{
+  console.log('else block');
+  this.cart.push({name,description,image,price,amount:1}); 
+  this.storage.set('cart',this.cart)
 }
 // console.log(this.cart);
 this.cartService.Items=this.cart.length;

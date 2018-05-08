@@ -1,6 +1,6 @@
 <app-header></app-header>
 <main> 
-        <div class="basket">
+        <div *ngIf="this.storage.get('cart').length" class="basket">
                 <div class="basket-labels">
                     <ul>
                         <li class="item item-heading">Item</li>
@@ -44,7 +44,7 @@
     
         <!-- <side cart> -->
         <aside>
-            <div class="summary">
+            <div *ngIf="this.storage.get('cart').length" class="summary">
                 <div class="summary-total-items"><span class="total-items"> PRICE DETAILS</span></div>
                 <div class="summary-subtotal">
                     <div class="subtotal-title">Price({{items}} items)</div>
@@ -57,7 +57,7 @@
                         <div class="total-value final-value" id="basket-total">{{totalPrice}}</div>
                     </div>
                     <div class="summary-checkout">
-                        <button class="checkout-cta"[routerLink]="['/checkout']">Checkout</button>
+                        <button class="checkout-cta" (click) = "goToCheckout()">Checkout</button>
                     </div>
                 </div>
         </aside>
